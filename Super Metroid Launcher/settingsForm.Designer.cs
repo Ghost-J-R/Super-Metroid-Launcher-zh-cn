@@ -400,7 +400,7 @@
             this.checkSpriteLimit.Size = new System.Drawing.Size(105, 19);
             this.checkSpriteLimit.TabIndex = 3;
             this.checkSpriteLimit.Text = "取消精灵数量限制";
-            this.toolTip1.SetToolTip(this.checkSpriteLimit, "取消每扫描线的精灵数量上限");
+            this.toolTip1.SetToolTip(this.checkSpriteLimit, "取消每扫描线的精灵(sprites)数量上限");
             this.checkSpriteLimit.UseVisualStyleBackColor = true;
             // 
             // checkLinearFiltering
@@ -807,7 +807,7 @@
             this.linkLabelGLSLShaders.Size = new System.Drawing.Size(106, 15);
             this.linkLabelGLSLShaders.TabIndex = 14;
             this.linkLabelGLSLShaders.TabStop = true;
-            this.linkLabelGLSLShaders.Text = "推荐着色器";
+            this.linkLabelGLSLShaders.Text = "推荐的GLSL着色器";
             this.linkLabelGLSLShaders.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelGLSLShaders_LinkClicked);
             // 
             // fullscreenMode

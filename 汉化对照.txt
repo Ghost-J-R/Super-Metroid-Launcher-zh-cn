@@ -173,7 +173,7 @@
     -> 渲染方式:
 
 24) Suggested Shaders
-    -> 推荐着色器
+    -> 推荐的GLSL着色器
 
 25) NOTE: You can hover over an option to get a more detailed description of what each setting does.
     -> 提示：把鼠标悬停在任一选项上，即可看到该项的详细说明。
@@ -373,7 +373,7 @@
  14) checkStretch: Stretches the graphics to take up the entire window/screen regardless of aspect ratio.
      -> 忽略屏幕比例，把画面拉伸铺满整个窗口/屏幕。
  15) checkSpriteLimit: Remove the sprite limit per scan line
-     -> 取消每扫描线的精灵数量上限
+     -> 取消每扫描线的精灵(sprites)数量上限
  16) checkLinearFiltering: Use linear filter. Softens image and results in less crisp pixels.
      -> 使用线性过滤。画面变柔和，像素不再锐利。
  17) buttonOpenShader: Opens a dialog for selecting your GLSL shader file.
