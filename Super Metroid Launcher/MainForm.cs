@@ -18,20 +18,20 @@ namespace Super_Metroid_Launcher
 
         private void Launch_click(object sender, EventArgs e)
         {
-            this.launch.Text = "Launching...";
+            this.launch.Text = "正在启动...";
             this.Enabled = false;
 
             this.build.Enabled= false;
             this.settings.Enabled = false;
 
-            this.launch.Text = "Running...";
+            this.launch.Text = "正在运行...";
             this.WindowState = FormWindowState.Minimized;
             if (RunProcess(@".\sm\sm.exe", ""))
             {
-                MessageBox.Show("Error occurred while launching Super Metroid.\n\nPlease refer to " + Path.Combine(Program.currentDirectory, "sm.log") + " for further details.");
+                MessageBox.Show("启动 Super Metroid 时发生错误。\n\n详细信息请查看 " + Path.Combine(Program.currentDirectory, "sm.log") + "。");
             }
 
-            this.launch.Text = "Launch Super Metroid";
+            this.launch.Text = "启动 Super Metroid";
             this.Enabled = true;
 
             this.build.Enabled = true;
@@ -42,7 +42,7 @@ namespace Super_Metroid_Launcher
 
         private void Build_Click(object sender, EventArgs e)
         {
-            this.build.Text = "Downloading...";
+            this.build.Text = "正在下载...";
             this.build.Enabled = false;
 
             this.launch.Enabled = false;
@@ -72,7 +72,7 @@ namespace Super_Metroid_Launcher
 
             if (!File.Exists(Path.Combine(Program.repoDir, "sm.smc")))
             {
-                MessageBox.Show("No ROM provided. Process cancelled.", "No ROM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("没有可用的 ROM，操作已取消。", "没有 ROM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateMainForm();
                 return;
             }
@@ -93,13 +93,13 @@ namespace Super_Metroid_Launcher
                 }
             }
 
-            this.build.Text = "Building...";
+            this.build.Text = "正在编译...";
 
             progressCompile.Visible = true;
             labelCompileStatus.Visible = true;
 
             // Need to make some small modifications to bat before exectuting
-            labelCompileStatus.Text = "Modifying installation bat...";
+            labelCompileStatus.Text = "正在生成编译脚本...";
             var batOld = Path.Combine(Program.repoDir, "run_with_tcc.bat");
             var batNew = Path.Combine(Program.repoDir, "radzprower.bat");
             using (var pythonFile = File.AppendText(batNew))
@@ -114,14 +114,14 @@ namespace Super_Metroid_Launcher
             }
 
             // build sm.exe
-            labelCompileStatus.Text = "Building sm.exe...";
+            labelCompileStatus.Text = "正在编译 sm.exe...";
             if (RunProcess("cmd.exe", @"/C radzprower.bat"))
             {
-                MessageBox.Show("Error occurred while building executable.\n\nPlease refer to " + Path.Combine(Program.currentDirectory, "sm.log") + " for further details.");
+                MessageBox.Show("编译 sm.exe 时出错。\n\n详细信息请查看 " + Path.Combine(Program.currentDirectory, "sm.log") + "。");
                 return;
             }
 
-            labelCompileStatus.Text = "Backing up sm.ini...";
+            labelCompileStatus.Text = "正在备份 sm.ini...";
             var iniFile = Path.Combine(Program.repoDir, "sm.ini");
             var iniCopy = Path.Combine(Program.repoDir, "backup", "sm.ini");
 
@@ -129,7 +129,7 @@ namespace Super_Metroid_Launcher
             else if (!Directory.Exists(Path.Combine(Program.repoDir, "backup"))) Directory.CreateDirectory(Path.Combine(Program.repoDir, "backup"));
             File.Move(iniFile, iniCopy);
 
-            labelCompileStatus.Text = "Modifying sm.ini...";
+            labelCompileStatus.Text = "正在修改 sm.ini...";
             CopyFromBackupINI(iniFile, iniCopy);
 
             ExitBuild();
@@ -137,7 +137,7 @@ namespace Super_Metroid_Launcher
 
         private void ExitBuild()
         {
-            progressCompile.Text = "Done";
+            progressCompile.Text = "完成";
             progressCompile.Visible = false;
             labelCompileStatus.Visible = false;
 
@@ -160,16 +160,16 @@ namespace Super_Metroid_Launcher
 
         private void UpdateMainForm()
         {
-            this.build.Text = "Download";
+            this.build.Text = "下载";
             if (Directory.Exists(Program.repoDir))
             {
                 Repository repo = new(Program.repoDir);
 
                 var status = repo.RetrieveStatus();
 
-                if (repo.Head.TrackingDetails.BehindBy > 0) this.build.Text = "Update";
-                else if (status.IsDirty) this.build.Text = "Restore";
-                else this.build.Text = "Re-build";
+                if (repo.Head.TrackingDetails.BehindBy > 0) this.build.Text = "更新";
+                else if (status.IsDirty) this.build.Text = "完全重置项目";
+                else this.build.Text = "重新编译";
             }
             this.build.Enabled = true;
 
@@ -180,11 +180,11 @@ namespace Super_Metroid_Launcher
 
                 if (File.Exists(Path.Combine(Program.repoDir, "sm.ini")))
                 {
-                    this.settings.Text = "Settings";
+                    this.settings.Text = "设置";
                 }
                 else
                 {
-                    this.settings.Text = "Restore INI";
+                    this.settings.Text = "恢复 INI";
                 }
             }
         }
@@ -219,7 +219,7 @@ namespace Super_Metroid_Launcher
             this.build.Name = "build";
             this.build.Size = new System.Drawing.Size(175, 50);
             this.build.TabIndex = 1;
-            this.build.Text = "Download";
+            this.build.Text = "下载";
             this.build.UseVisualStyleBackColor = true;
             this.build.Click += new System.EventHandler(this.Build_Click);
             // 
@@ -231,7 +231,7 @@ namespace Super_Metroid_Launcher
             this.launch.Name = "launch";
             this.launch.Size = new System.Drawing.Size(175, 50);
             this.launch.TabIndex = 0;
-            this.launch.Text = "Launch Super Metroid";
+            this.launch.Text = "启动 Super Metroid";
             this.launch.UseVisualStyleBackColor = true;
             this.launch.Click += new System.EventHandler(this.Launch_click);
             // 
@@ -243,7 +243,7 @@ namespace Super_Metroid_Launcher
             this.settings.Name = "settings";
             this.settings.Size = new System.Drawing.Size(175, 50);
             this.settings.TabIndex = 2;
-            this.settings.Text = "Settings";
+            this.settings.Text = "设置";
             this.settings.UseVisualStyleBackColor = true;
             this.settings.Click += new System.EventHandler(this.Settings_click);
             // 

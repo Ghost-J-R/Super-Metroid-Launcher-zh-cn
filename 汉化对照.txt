@@ -1,0 +1,306 @@
+================================================================================
+ Super Metroid Launcher  —  已汉化内容 中英对照
+ 工程：Super-Metroid-Launcher-SourceCode - CN（上游 v1.0.1）
+ 更新时间：2026-10-29 18:15（含用户润色稿）
+ 条目数：73 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
+         故编号共 75 条）
+================================================================================
+
+【范围说明】
+  本清单只列「已经改写成中文」的文案。
+  以下**不在**本清单内（按设计保持英文）：
+    A. 耦合字面量 —— 文案被代码当判断条件用，改了会让设置写错或功能失效：
+         settingsForm: Custom / Fullscreen / Borderless Fullscreen / Mono
+                        （另有 Steam Deck (16:10) / Widescreen (16:9) / Normal (4:3)，属隐藏控件）
+         keymapper   : Controller（输入类型单选；分组标题「控制器/手柄 按键映射」已译）
+    B. 未使用控件（Visible = false，界面上不出现）：共 22 条文案。
+    C. 渲染方式下拉的 SDL (Default) / SDL-Software：按用户要求保留英文原名，
+       便于与 sm.ini 里的 OutputMethod 取值（SDL / SDL-Software / OpenGL）直接对上号。
+       该下拉的判据是 SelectedIndex（settingsForm.cs:496），所以文本中英文都不影响功能。
+  尚未翻译：全部悬停提示（约 130 条）、对话框消息、progressForm 正文、两个 .resx。
+  「\n」表示源码里的换行转义，不是字面反斜杠。
+
+
+================================================================================
+ 一、主窗口  MainForm.cs        （19 条）
+================================================================================
+
+ 1) Launching...
+    -> 正在启动...
+
+ 2) Running...
+    -> 正在运行...
+
+ 3) Error occurred while launching Super Metroid.\n\nPlease refer to <sm.log> for further details.
+    -> 启动 Super Metroid 时发生错误。\n\n详细信息请查看 <sm.log>。
+
+ 4) Launch Super Metroid
+    -> 启动 Super Metroid
+    （按钮初始值与运行结束复原值，两处同一译文）
+
+ 5) Downloading...
+    -> 正在下载...
+
+ 6) No ROM provided. Process cancelled.   [标题] No ROM
+    -> 没有可用的 ROM，操作已取消。      [标题] 没有 ROM
+
+ 7) Building...
+    -> 正在编译...
+
+ 8) Modifying installation bat...
+    -> 正在生成编译脚本...
+
+ 9) Building sm.exe...
+    -> 正在编译 sm.exe...
+
+10) Error occurred while building executable.\n\nPlease refer to <sm.log> for further details.
+    -> 编译 sm.exe 时出错。\n\n详细信息请查看 <sm.log>。
+
+11) Backing up sm.ini...
+    -> 正在备份 sm.ini...
+
+12) Modifying sm.ini...
+    -> 正在修改 sm.ini...
+
+13) Done            （progressCompile.Text，进度条不显示文字，仅作语义标记）
+    -> 完成
+
+14) Download
+    -> 下载
+    （初始化值与「未就绪」状态，两处同一译文）
+
+15) Update          （本地仓库落后于上游时）
+    -> 更新
+
+16) Restore         （本地有未提交改动时）
+    -> 完全重置项目
+
+17) Re-build        （已就绪时）
+    -> 重新编译
+
+18) Settings
+    -> 设置
+    （初始化值与常规状态，两处同一译文）
+
+19) Restore INI     （sm.ini 缺失时）
+    -> 恢复 INI
+
+
+================================================================================
+ 二、设置窗口  settingsForm.Designer.cs   （29 条）
+================================================================================
+
+[窗口与分组]
+ 1) 窗口标题  Settings
+    -> 设置
+
+ 2) General
+    -> 基础设置
+
+ 3) Graphics
+    -> 画面设置
+
+ 4) Fullscreen Mode
+    -> 全屏设置
+
+ 5) Window Size
+    -> 窗口大小
+    ※ 这一项的准确含义（已核对 sm 源码，它不是画面比例）：
+      · smre-cn\src\config.c:334-348 —— WindowSize = Auto 时 g_config.window_width /
+        window_height 置 0（自动）；WindowSize = 1280x960 时拆成 window_width /
+        window_height 两个字段。它设的是**窗口像素尺寸**。
+      · smre-cn\游玩说明.md:132 —— 原文定义：「窗口尺寸：Auto 或 宽x高（如 1280x960）」。
+      · 真正的画面比例是另外两个键：IgnoreAspectRatio（config.c:353，拉伸铺满）与
+        extended_aspect_ratio（config.h:60；main.c:347 中 g_snes_width =
+        extended_aspect_ratio * 2 + 256）。启动器里控制比例的是那个**已被隐藏**的
+        「Aspect Ratio」分组。
+      若想更直白，可改为「窗口尺寸」，语义不变。
+
+ 6) Sound
+    -> 音频设置
+
+ 7) Audio Channels
+    -> 音频声道
+
+[选项与标签]
+ 8) Disable Frame Delay
+    -> 禁用帧延迟
+
+ 9) Autosave
+    -> 自动保存
+
+10) Windowed
+    -> 窗口化
+
+11) Auto
+    -> 自动
+
+12) Window Scaling:
+    -> 窗口缩放:
+
+13) Optimized SNES PPU
+    -> 优化版 SNES PPU
+
+14) Enhanced Mode7
+    -> 增强的 Mode7 模式
+
+15) Stretch
+    -> 拉伸画面
+
+16) No Sprite Limit
+    -> 取消精灵数量限制
+
+17) Linear Filtering
+    -> 线性过滤画面
+
+18) Enable Audio
+    -> 启用音频输出
+
+19) Audio Frequency:
+    -> 音频采样率:
+
+20) Audio Samples:
+    -> 采样缓冲区大小:
+
+21) Stereo
+    -> 立体声
+
+22) Use GLSL Shader
+    -> 启用 GLSL 着色器
+
+23) Render Method:
+    -> 渲染方式:
+
+24) Suggested Shaders
+    -> 推荐着色器
+
+25) NOTE: You can hover over an option to get a more detailed description of what each setting does.
+    -> 提示：把鼠标悬停在任一选项上，即可看到该项的详细说明。
+    （源码中原本是两段字符串拼接，已合并为单段中文）
+
+[按钮]
+26) Keymapping
+    -> 按键绑定
+
+27) Reset
+    -> 重置设置
+
+28) Save
+    -> 保存设置
+
+29) Cancel
+    -> 取消
+
+[渲染方式下拉项 comboRenderMethod —— 保持英文]
+30) SDL (Default)      -> 不改
+31) SDL-Software       -> 不改
+    （第三项 OpenGL 同样保持原样）
+
+
+================================================================================
+ 三、按键绑定窗口  keymapper.Designer.cs   （25 条）
+================================================================================
+
+[窗口与分组]
+ 1) 窗口标题  Keymapper Utility
+    -> 按键绑定工具
+
+ 2) Controller            （分组标题；不是输入类型那个单选）
+    -> 控制器/手柄 按键映射
+
+ 3) Input Type
+    -> 输入类型
+
+ 4) Game Functions
+    -> 游戏功能
+
+ 5) Cheats
+    -> 作弊
+
+ 6) Replays
+    -> 回放
+
+ 7) Replay Controls
+    -> 回放控制
+
+[按钮]
+ 8) Assign All Input
+    -> 依次分配全部按键
+
+ 9) Save
+    -> 保存
+
+10) Reset
+    -> 重置
+
+11) Cancel
+    -> 取消
+
+[输入类型]
+12) Keyboard
+    -> 键盘
+    （同一分组里的 Controller 是耦合字面量，按设计保持英文）
+
+[游戏功能组 标签]
+13) Reset:
+    -> 重置:
+
+14) Pause:
+    -> 暂停:
+
+15) Increase Window Size:
+    -> 放大游戏窗口:
+
+16) Decrease Window Size:
+    -> 缩小游戏窗口:
+
+17) Volume Up:
+    -> 增大音量:
+
+18) Volume Down:
+    -> 减小音量:
+
+19) Dim When Paused
+    -> 暂停时画面变暗
+
+[作弊组 标签]
+20) Restore Health:
+    -> 回满血:
+
+21) Jump:
+    -> 跳跃:
+
+22) Turbo:
+    -> 加速游戏:
+
+[回放组 标签]
+23) Toggle Replay Speed:
+    -> 切换回放速度:
+
+24) Stop Replay:
+    -> 停止回放:
+
+[回放控制说明]
+25) The game has an integrated replay/savestate system. Here are the controls:
+    -> 游戏内置了回放 / 即时存档系统，操作如下：
+
+
+================================================================================
+ 四、统计
+================================================================================
+
+  主窗口                 19 条
+  设置窗口               29 条
+  按键绑定窗口           25 条
+  ------------------------------------
+  合计                   73 条
+
+  保持英文（耦合字面量）：  Custom / Fullscreen / Borderless Fullscreen / Mono /
+                            Controller / Steam Deck (16:10) / Widescreen (16:9) / Normal (4:3)
+  保持英文（按用户要求）：  SDL (Default) / SDL-Software / OpenGL
+  保持英文（未使用控件）：  22 条
+  尚未翻译：                悬停提示约 130 条、对话框消息、progressForm 正文、2 个 .resx
+
+================================================================================
+ 生成方式：逐条改自 v1.0.1 源码；编译已验证（独立输出目录 0 error、0 C# 编译错误）。
+================================================================================

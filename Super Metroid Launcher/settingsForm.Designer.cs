@@ -1,4 +1,4 @@
-﻿namespace Super_Metroid_Launcher
+namespace Super_Metroid_Launcher
 {
     partial class settingsForm
     {
@@ -118,7 +118,7 @@
             this.general.Size = new System.Drawing.Size(173, 49);
             this.general.TabIndex = 5;
             this.general.TabStop = false;
-            this.general.Text = "General";
+            this.general.Text = "基础设置";
             // 
             // disableFrameDelay
             // 
@@ -127,7 +127,7 @@
             this.disableFrameDelay.Name = "disableFrameDelay";
             this.disableFrameDelay.Size = new System.Drawing.Size(132, 19);
             this.disableFrameDelay.TabIndex = 4;
-            this.disableFrameDelay.Text = "Disable Frame Delay";
+            this.disableFrameDelay.Text = "禁用帧延迟";
             this.toolTip1.SetToolTip(this.disableFrameDelay, "Disable the SDL_Delay that happens on each frame (Gives slightly better performan" +
         "ce if your display is set to exactly 60Hz)");
             this.disableFrameDelay.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             this.autosaveCheck.Name = "autosaveCheck";
             this.autosaveCheck.Size = new System.Drawing.Size(75, 19);
             this.autosaveCheck.TabIndex = 0;
-            this.autosaveCheck.Text = "Autosave";
+            this.autosaveCheck.Text = "自动保存";
             this.toolTip1.SetToolTip(this.autosaveCheck, "Automatically save state on quit and reload on start");
             this.autosaveCheck.UseVisualStyleBackColor = true;
             // 
@@ -277,7 +277,7 @@
             this.radioWindowed.Size = new System.Drawing.Size(82, 19);
             this.radioWindowed.TabIndex = 0;
             this.radioWindowed.TabStop = true;
-            this.radioWindowed.Text = "Windowed";
+            this.radioWindowed.Text = "窗口化";
             this.toolTip1.SetToolTip(this.radioWindowed, "The game will play within a window on the desktop at your selected aspect ratio a" +
         "nd window scaling");
             this.radioWindowed.UseVisualStyleBackColor = true;
@@ -322,7 +322,7 @@
             this.windowAuto.Size = new System.Drawing.Size(51, 19);
             this.windowAuto.TabIndex = 0;
             this.windowAuto.TabStop = true;
-            this.windowAuto.Text = "Auto";
+            this.windowAuto.Text = "自动";
             this.toolTip1.SetToolTip(this.windowAuto, "Automatically resize window to match selected aspect ratio");
             this.windowAuto.UseVisualStyleBackColor = true;
             this.windowAuto.CheckedChanged += new System.EventHandler(this.CustomSizeChange);
@@ -336,7 +336,7 @@
             this.checkPPU.Name = "checkPPU";
             this.checkPPU.Size = new System.Drawing.Size(136, 19);
             this.checkPPU.TabIndex = 2;
-            this.checkPPU.Text = "Optimized SNES PPU";
+            this.checkPPU.Text = "优化版 SNES PPU";
             this.toolTip1.SetToolTip(this.checkPPU, "Use an optimized SNES PPU implementation (potentially buggy)");
             this.checkPPU.UseVisualStyleBackColor = true;
             // 
@@ -364,7 +364,7 @@
             this.labelScale.Name = "labelScale";
             this.labelScale.Size = new System.Drawing.Size(95, 23);
             this.labelScale.TabIndex = 4;
-            this.labelScale.Text = "Window Scaling:";
+            this.labelScale.Text = "窗口缩放:";
             this.labelScale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.labelScale, "This sets the scaling of the game window when not fullscreen");
             // 
@@ -377,7 +377,7 @@
             this.checkMode7.Name = "checkMode7";
             this.checkMode7.Size = new System.Drawing.Size(118, 19);
             this.checkMode7.TabIndex = 5;
-            this.checkMode7.Text = "Enhanced Mode7";
+            this.checkMode7.Text = "增强的 Mode7 模式";
             this.toolTip1.SetToolTip(this.checkMode7, "Display the world map with higher resolution");
             this.checkMode7.UseVisualStyleBackColor = true;
             // 
@@ -388,7 +388,7 @@
             this.checkStretch.Name = "checkStretch";
             this.checkStretch.Size = new System.Drawing.Size(63, 19);
             this.checkStretch.TabIndex = 6;
-            this.checkStretch.Text = "Stretch";
+            this.checkStretch.Text = "拉伸画面";
             this.toolTip1.SetToolTip(this.checkStretch, "Stretches the graphics to take up the entire window/screen regardless of aspect r" +
         "atio.");
             this.checkStretch.UseVisualStyleBackColor = true;
@@ -402,7 +402,7 @@
             this.checkSpriteLimit.Name = "checkSpriteLimit";
             this.checkSpriteLimit.Size = new System.Drawing.Size(105, 19);
             this.checkSpriteLimit.TabIndex = 3;
-            this.checkSpriteLimit.Text = "No Sprite Limit";
+            this.checkSpriteLimit.Text = "取消精灵数量限制";
             this.toolTip1.SetToolTip(this.checkSpriteLimit, "Remove the sprite limit per scan line");
             this.checkSpriteLimit.UseVisualStyleBackColor = true;
             // 
@@ -413,7 +413,7 @@
             this.checkLinearFiltering.Name = "checkLinearFiltering";
             this.checkLinearFiltering.Size = new System.Drawing.Size(104, 19);
             this.checkLinearFiltering.TabIndex = 4;
-            this.checkLinearFiltering.Text = "Linear Filtering";
+            this.checkLinearFiltering.Text = "线性过滤画面";
             this.toolTip1.SetToolTip(this.checkLinearFiltering, "Use linear filter. Softens image and results in less crisp pixels.");
             this.checkLinearFiltering.UseVisualStyleBackColor = true;
             // 
@@ -481,7 +481,7 @@
             this.checkBoxShader.Name = "checkBoxShader";
             this.checkBoxShader.Size = new System.Drawing.Size(113, 19);
             this.checkBoxShader.TabIndex = 17;
-            this.checkBoxShader.Text = "Use GLSL Shader";
+            this.checkBoxShader.Text = "启用 GLSL 着色器";
             this.toolTip1.SetToolTip(this.checkBoxShader, "This will enable the use of GLSL shaders.\r\n\r\nThis is only supported by the OpenGL" +
         " renderer.");
             this.checkBoxShader.UseVisualStyleBackColor = true;
@@ -496,7 +496,7 @@
             this.checkBoxEnableAudio.Name = "checkBoxEnableAudio";
             this.checkBoxEnableAudio.Size = new System.Drawing.Size(96, 19);
             this.checkBoxEnableAudio.TabIndex = 7;
-            this.checkBoxEnableAudio.Text = "Enable Audio";
+            this.checkBoxEnableAudio.Text = "启用音频输出";
             this.toolTip1.SetToolTip(this.checkBoxEnableAudio, "Enable audio output by the game");
             this.checkBoxEnableAudio.UseVisualStyleBackColor = true;
             this.checkBoxEnableAudio.CheckedChanged += new System.EventHandler(this.CheckBoxEnableAudio_CheckedChanged);
@@ -508,7 +508,7 @@
             this.labelAudioFrequency.Name = "labelAudioFrequency";
             this.labelAudioFrequency.Size = new System.Drawing.Size(100, 15);
             this.labelAudioFrequency.TabIndex = 1;
-            this.labelAudioFrequency.Text = "Audio Frequency:";
+            this.labelAudioFrequency.Text = "音频采样率:";
             this.toolTip1.SetToolTip(this.labelAudioFrequency, "DSP frequency in samples per second");
             // 
             // labelAudioSamples
@@ -518,7 +518,7 @@
             this.labelAudioSamples.Name = "labelAudioSamples";
             this.labelAudioSamples.Size = new System.Drawing.Size(89, 15);
             this.labelAudioSamples.TabIndex = 2;
-            this.labelAudioSamples.Text = "Audio Samples:";
+            this.labelAudioSamples.Text = "采样缓冲区大小:";
             this.toolTip1.SetToolTip(this.labelAudioSamples, "Audio buffer size in samples");
             // 
             // groupBoxMSUSettings
@@ -683,7 +683,7 @@
             this.radioButtonStereo.Size = new System.Drawing.Size(58, 19);
             this.radioButtonStereo.TabIndex = 1;
             this.radioButtonStereo.TabStop = true;
-            this.radioButtonStereo.Text = "Stereo";
+            this.radioButtonStereo.Text = "立体声";
             this.toolTip1.SetToolTip(this.radioButtonStereo, "Outputs audio to the left or right speakers based where the sound is generated on" +
         " screen");
             this.radioButtonStereo.UseVisualStyleBackColor = true;
@@ -705,7 +705,7 @@
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(173, 35);
             this.buttonReset.TabIndex = 3;
-            this.buttonReset.Text = "Reset";
+            this.buttonReset.Text = "重置设置";
             this.toolTip1.SetToolTip(this.buttonReset, "Reset all settings to their default values");
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.ButtonReset_Click);
@@ -716,7 +716,7 @@
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(173, 35);
             this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "Save";
+            this.buttonSave.Text = "保存设置";
             this.toolTip1.SetToolTip(this.buttonSave, "Save current settings and close window");
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
@@ -727,7 +727,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(173, 35);
             this.buttonCancel.TabIndex = 1;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "取消";
             this.toolTip1.SetToolTip(this.buttonCancel, "Close window without saving any settings");
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -739,7 +739,7 @@
             this.labelRenderMethod.Name = "labelRenderMethod";
             this.labelRenderMethod.Size = new System.Drawing.Size(92, 15);
             this.labelRenderMethod.TabIndex = 11;
-            this.labelRenderMethod.Text = "Render Method:";
+            this.labelRenderMethod.Text = "渲染方式:";
             this.toolTip1.SetToolTip(this.labelRenderMethod, "Rendering software used. SDL-software rendering may give better performance on Ra" +
         "spberry Pi");
             // 
@@ -777,7 +777,7 @@
             this.buttonKeymapping.Name = "buttonKeymapping";
             this.buttonKeymapping.Size = new System.Drawing.Size(381, 35);
             this.buttonKeymapping.TabIndex = 0;
-            this.buttonKeymapping.Text = "Keymapping";
+            this.buttonKeymapping.Text = "按键绑定";
             this.toolTip1.SetToolTip(this.buttonKeymapping, "Open a new settings menu exclusively for configuring keymappings for the game");
             this.buttonKeymapping.UseVisualStyleBackColor = true;
             this.buttonKeymapping.Click += new System.EventHandler(this.ButtonKeymapping_Click);
@@ -804,7 +804,7 @@
             this.graphics.Size = new System.Drawing.Size(381, 262);
             this.graphics.TabIndex = 6;
             this.graphics.TabStop = false;
-            this.graphics.Text = "Graphics";
+            this.graphics.Text = "画面设置";
             // 
             // linkLabelGLSLShaders
             // 
@@ -814,7 +814,7 @@
             this.linkLabelGLSLShaders.Size = new System.Drawing.Size(106, 15);
             this.linkLabelGLSLShaders.TabIndex = 14;
             this.linkLabelGLSLShaders.TabStop = true;
-            this.linkLabelGLSLShaders.Text = "Suggested Shaders";
+            this.linkLabelGLSLShaders.Text = "推荐着色器";
             this.linkLabelGLSLShaders.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelGLSLShaders_LinkClicked);
             // 
             // fullscreenMode
@@ -828,7 +828,7 @@
             this.fullscreenMode.Size = new System.Drawing.Size(185, 102);
             this.fullscreenMode.TabIndex = 1;
             this.fullscreenMode.TabStop = false;
-            this.fullscreenMode.Text = "Fullscreen Mode";
+            this.fullscreenMode.Text = "全屏设置";
             // 
             // windowSize
             // 
@@ -843,7 +843,7 @@
             this.windowSize.Size = new System.Drawing.Size(177, 102);
             this.windowSize.TabIndex = 0;
             this.windowSize.TabStop = false;
-            this.windowSize.Text = "Window Size";
+            this.windowSize.Text = "窗口大小";
             // 
             // windowSizeX
             // 
@@ -879,7 +879,7 @@
             this.groupBoxSound.Size = new System.Drawing.Size(202, 140);
             this.groupBoxSound.TabIndex = 8;
             this.groupBoxSound.TabStop = false;
-            this.groupBoxSound.Text = "Sound";
+            this.groupBoxSound.Text = "音频设置";
             // 
             // groupBoxAudioChannels
             // 
@@ -891,7 +891,7 @@
             this.groupBoxAudioChannels.Size = new System.Drawing.Size(190, 54);
             this.groupBoxAudioChannels.TabIndex = 0;
             this.groupBoxAudioChannels.TabStop = false;
-            this.groupBoxAudioChannels.Text = "Audio Channels";
+            this.groupBoxAudioChannels.Text = "音频声道";
             // 
             // groupBoxGameplay
             // 
@@ -909,8 +909,7 @@
             this.labelHoverNote.Name = "labelHoverNote";
             this.labelHoverNote.Size = new System.Drawing.Size(381, 37);
             this.labelHoverNote.TabIndex = 5;
-            this.labelHoverNote.Text = "NOTE: You can hover over an option to get a more detailed description of what eac" +
-    "h setting does.";
+            this.labelHoverNote.Text = "提示：把鼠标悬停在任一选项上，即可看到该项的详细说明。";
             this.labelHoverNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMSUCopy
@@ -969,7 +968,7 @@
             this.Name = "settingsForm";
             this.Padding = new System.Windows.Forms.Padding(6);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Settings";
+            this.Text = "设置";
             this.general.ResumeLayout(false);
             this.general.PerformLayout();
             this.aspectRatio.ResumeLayout(false);
