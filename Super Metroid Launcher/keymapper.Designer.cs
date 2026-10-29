@@ -103,7 +103,11 @@ namespace Super_Metroid_Launcher
             this.pictureController.Location = new System.Drawing.Point(6, 22);
             this.pictureController.Name = "pictureController";
             this.pictureController.Size = new System.Drawing.Size(686, 307);
-            this.pictureController.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            // 用 Zoom 而不是 AutoSize：AutoSize 会把本控件尺寸钉死为图片原始像素（686×307），
+            // 与 AutoScaleMode.Font 下被缩放的输入框坐标不同步，高 DPI（150%/200%）时
+            // 手柄图与 12 个按键输入框会错位。Zoom 让图片等比缩放到控件尺寸（控件随 DPI 缩放），
+            // 两者同倍放大即保持对齐；图片与控件宽高比一致（686:307），不会裁切或留黑边。
+            this.pictureController.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureController.TabIndex = 0;
             this.pictureController.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureController, resources.GetString("pictureController.ToolTip"));
