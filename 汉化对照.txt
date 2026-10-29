@@ -2,7 +2,7 @@
  Super Metroid Launcher  —  已汉化内容 中英对照
  工程：Super-Metroid-Launcher-SourceCode - CN（上游 v1.0.1）
  更新时间：2026-10-29 18:25
- 条目数：127 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
+ 条目数：150 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
          故编号共 75 条）
 ================================================================================
 
@@ -294,7 +294,7 @@
   设置窗口               29 条
   按键绑定窗口           25 条
   ------------------------------------
-  合计                   127 条
+  合计                   150 条
 
   耦合字面量：已全部解耦（当前界面 0 个可见项仍依赖显示文本）
                             · settingsForm.cs 4 处「switch(选中项.Text)」改为读控件状态：
@@ -452,3 +452,60 @@
  说明：keymapper 的 pictureController / groupBoxController 两条来自 keymapper.resx
        （resources.GetString），其余来自 Designer 的 SetToolTip。多行原文合并为单行中文。
        未使用控件的 20 条 tooltip 不翻译（目标控件 Visible = false）。
+
+
+================================================================================
+ 七、对话框消息与动态文字（23 条）+ 回放说明标签（1 条）
+================================================================================
+
+  1) [settingsForm.cs] INI file is corrupted and preventing the settings menu from loading.\n\nDo you want to restore to default settings?
+     -> INI 文件已损坏，导致设置菜单无法载入。\n\n是否恢复为默认设置？
+  2) [settingsForm.cs] Corrupted Settings
+     -> 配置文件损坏
+  3) [settingsForm.cs] Resetting...
+     -> 正在重置...
+  4) [settingsForm.cs] This will reset the INI file immediately and cannot be reversed.\n\nDo you wish to continue?
+     -> 这会立即重置 INI 文件，且无法撤销。\n\n是否继续？
+  5) [settingsForm.cs] Confirmation
+     -> 确认
+  6) [settingsForm.cs] Reset
+     -> 重置设置
+  7) [settingsForm.cs] INI backup file is corrupted and preventing the settings menu from loading.\n\nDo you want to download a clean copy from the sm repository?
+     -> INI 备份文件已损坏，导致设置菜单无法载入。\n\n是否从 sm 仓库下载一份干净的配置？
+  8) [settingsForm.cs] Your INI backup file is missing and you are unable to connect to the internet to download a fresh copy.\n\nPlease ensure you have a stable internet connection before attempting to reset settings.
+     -> INI 备份文件缺失，且当前无法联网下载新副本。\n\n请在尝试重置设置前确认网络连接稳定。
+  9) [settingsForm.cs] No Connection
+     -> 无网络连接
+ 10) [settingsForm.cs] Saving...
+     -> 正在保存...
+ 11) [settingsForm.cs] The changes that you have made will not be saved.\n\nDo you wish to continue?
+     -> 你所做的改动将不会被保存。\n\n是否继续？
+ 12) [settingsForm.cs] Selected file must be of the .zspr format.
+     -> 所选文件必须是 .zspr 格式。
+ 13) [settingsForm.cs] Selected file must be of the .glsl or .glslp formats.
+     -> 所选文件必须是 .glsl 或 .glslp 格式。
+ 14) [settingsForm.cs] No MSU files were found in the selected directory. Please verify the correct folder was selected and that the proper .pcm or .opuz files are available.
+     -> 所选目录中没有找到 MSU 文件。请确认选对了文件夹，且其中含有正确的 .pcm 或 .opuz 文件。
+ 15) [keymapper.cs] The Shift keys are not recognized by sm.exe and thus cannot be used.
+     -> sm.exe 无法识别 Shift 键，因此不能使用。
+ 16) [keymapper.cs] The Control keys are not recognized by sm.exe and thus cannot be used.
+     -> sm.exe 无法识别 Ctrl 键，因此不能使用。
+ 17) [keymapper.cs] The Alt keys are not recognized by sm.exe and thus cannot be used.
+     -> sm.exe 无法识别 Alt 键，因此不能使用。
+ 18) [keymapper.cs] The function keys are utilized by sm.exe's replay/savestate functionality and thus cannot be used for other inputs.
+     -> 功能键已被 sm.exe 的回放/即时存档功能占用，不能再用于其他输入。
+ 19) [keymapper.cs] The number keys are utilized by sm.exe's replay/savestate functionality and thus cannot be used for other inputs.
+     -> 数字键已被 sm.exe 的回放/即时存档功能占用，不能再用于其他输入。
+ 20) [keymapper.cs] The <键名> key is utilized by sm.exe's replay/savestate functionality and thus cannot be used for other inputs.
+     -> 「<键名>」键已被 sm.exe 的回放/即时存档功能占用，不能再用于其他输入。
+ 21) [keymapper.cs] Do you want to save your changes to <类型> settings?
+     -> 是否保存你对「<类型>」设置所做的更改？
+ 22) [keymapper.cs] Save Changes
+     -> 保存更改
+ 23) [keymapper.cs] Invalid Input
+     -> 输入无效
+ 24) [keymapper.resx] F1 - F10: Load savestates/replays / Shift+F1 - F10: Saves savestate/replay / Ctrl: When held while loading a savestate, the game replays itself up to point of the savestate rather than immediately load the savestate.
+     -> F1 - F10：载入即时存档 / 回放；Shift+F1 - F10：保存即时存档 / 回放；Ctrl：载入即时存档时按住，游戏会先重演到该存档对应的时间点，而不是直接载入存档。
+
+ 说明：<键名> / <类型> 是运行期替换的占位（源码里是字符串拼接），不是字面量。
+       progressForm 的下载正文与 Assign All 流程的 26 处临时按钮文字仍未翻译。
