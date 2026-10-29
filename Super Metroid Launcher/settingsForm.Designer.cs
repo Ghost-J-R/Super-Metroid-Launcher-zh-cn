@@ -1,4 +1,4 @@
-namespace Super_Metroid_Launcher
+﻿namespace Super_Metroid_Launcher
 {
     partial class settingsForm
     {
