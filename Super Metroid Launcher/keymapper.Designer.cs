@@ -257,7 +257,7 @@
             this.groupBoxInput.TabIndex = 12;
             this.groupBoxInput.TabStop = false;
             this.groupBoxInput.Text = "输入类型";
-            this.toolTip1.SetToolTip(this.groupBoxInput, "选择要配置的输入类型");
+            this.toolTip1.SetToolTip(this.groupBoxInput, "选择游戏使用的输入设备类型，即用键盘或手柄控制游戏");
             // 
             // radioButtonController
             // 
@@ -267,7 +267,7 @@
             this.radioButtonController.Name = "radioButtonController";
             this.radioButtonController.Size = new System.Drawing.Size(78, 19);
             this.radioButtonController.TabIndex = 1;
-            this.radioButtonController.Text = "控制器";
+            this.radioButtonController.Text = "控制器/手柄";
             this.radioButtonController.UseVisualStyleBackColor = true;
             // 
             // radioButtonKeyboard
@@ -333,7 +333,7 @@
             this.labelJump.Size = new System.Drawing.Size(39, 15);
             this.labelJump.TabIndex = 5;
             this.labelJump.Text = "跳跃:";
-            this.toolTip1.SetToolTip(this.labelJump, "如果一件道具都没有，就给自己一件吧。");
+            this.toolTip1.SetToolTip(this.labelJump, "If you have no keys, give yourself a single key.");
             // 
             // labelTurbo
             // 
@@ -353,7 +353,7 @@
             this.labelLife.Size = new System.Drawing.Size(87, 15);
             this.labelLife.TabIndex = 5;
             this.labelLife.Text = "回满血:";
-            this.toolTip1.SetToolTip(this.labelLife, "恢复全部体力。按住 Shift 再按该键会同时补满其他资源。");
+            this.toolTip1.SetToolTip(this.labelLife, "恢复全部血量。按住 Shift 再按该键会同时补满其他资源。");
             // 
             // groupBoxGame
             // 
@@ -451,7 +451,7 @@
             this.labelPause.Size = new System.Drawing.Size(41, 15);
             this.labelPause.TabIndex = 5;
             this.labelPause.Text = "暂停游戏:";
-            this.toolTip1.SetToolTip(this.labelPause, "暂停游戏但不打开道具菜单");
+            this.toolTip1.SetToolTip(this.labelPause, "暂停游戏但不打开地图/道具菜单");
             // 
             // textBoxVolumeDown
             // 

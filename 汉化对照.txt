@@ -2,7 +2,7 @@
  Super Metroid Launcher  —  已汉化内容 中英对照
  工程：Super-Metroid-Launcher-SourceCode - CN（上游 v1.0.1）
  更新时间：2026-10-29 18:25
- 条目数：129 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
+ 条目数：127 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
          故编号共 75 条）
 ================================================================================
 
@@ -294,7 +294,7 @@
   设置窗口               29 条
   按键绑定窗口           25 条
   ------------------------------------
-  合计                   129 条
+  合计                   127 条
 
   耦合字面量：已全部解耦（当前界面 0 个可见项仍依赖显示文本）
                             · settingsForm.cs 4 处「switch(选中项.Text)」改为读控件状态：
@@ -334,7 +334,7 @@
  4) Mono                       -> 单声道        （音频声道；INIT 值 1）
 
  [按键绑定窗口 keymapper.Designer.cs]
- 5) Controller                 -> 控制器        （输入类型单选）
+ 5) Controller                 -> 控制器/手柄  （输入类型单选）
 
  解耦方式见 §四。写入 sm.ini 的值（Auto / WxH / 0 / 1 / 2 / 16:10 / 16:9 / 4:3）完全未变，
  行为与改动前等价，只是不再依赖控件的显示文本。
@@ -347,13 +347,13 @@
   1) disableFrameDelay: Disable the SDL_Delay that happens on each frame (Gives slightly better performance if your display is set to exactly 60Hz)
      -> 禁用每帧的 SDL_Delay（若显示器正好是 60Hz，性能会略有提升）
   2) autosaveCheck: Automatically save state on quit and reload on start
-     -> 退出时自动保存即时存档，启动时自动载入
+     -> 退出时自动保存为即时存档，启动时自动载入
   3) radioFullscreenMode: Game will launch in exclusive fullscreen mode
      -> 游戏将以独占全屏模式启动
   4) radioFullscreen: Game will launch in borderless fullscreen
      -> 游戏将以无边框全屏启动
   5) radioWindowed: The game will play within a window on the desktop at your selected aspect ratio and window scaling
-     -> 游戏以窗口形式运行，比例与缩放取上面选定的值
+     -> 游戏以窗口模式运行，比例与缩放取设置选定的值
   6) height: Height
      -> 高度
   7) width: Width
@@ -365,7 +365,7 @@
  10) checkPPU: Use an optimized SNES PPU implementation (potentially buggy)
      -> 使用优化过的 SNES PPU 实现（可能有 bug）
  11) numericWindowScale: 1 = 100%\r\n2 = 200%\r\n3 = 300%\r\netc.
-     -> 1 = 100%\r\n2 = 200%\r\n3 = 300%\r\n以此类推
+     -> 1 = 100%\r\n2 = 200%\r\n3 = 300%\r\netc.   ← 用户要求保持英文原文，未翻译
  12) labelScale: This sets the scaling of the game window when not fullscreen
      -> 非全屏时的游戏窗口缩放倍数
  13) checkMode7: Display the world map with higher resolution
@@ -381,7 +381,7 @@
  18) textBoxGLSLShader: The path where your .glsl or .slslp file is located
      -> .glsl 或 .glslp 文件所在路径
  19) checkBoxShader: This will enable the use of GLSL shaders.\r\n\r\nThis is only supported by the OpenGL renderer.
-     -> 启用 GLSL 着色器。\r\n\r\n仅 OpenGL 渲染方式支持。
+     -> 启用 GLSL 着色器。\r\n\r\n仅 OpenGL 渲染方式支持此选项。
  20) checkBoxEnableAudio: Enable audio output by the game
      -> 启用游戏的音频输出
  21) labelAudioFrequency: DSP frequency in samples per second
@@ -407,7 +407,7 @@
  31) comboRenderMethod: Rendering software used. SDL-software rendering may give better performance on Raspberry Pi
      -> 所使用的渲染后端。在树莓派上 SDL-Software 渲染可能性能更好
  32) buttonKeymapping: Open a new settings menu exclusively for configuring keymappings for the game
-     -> 打开专用于配置游戏按键映射的设置菜单
+     -> 打开专门用于配置游戏按键映射的设置菜单
 
  [按键绑定窗口 keymapper.Designer.cs / keymapper.resx]
  33) pictureController: When you click on one of the fields for a given input selection, you will have 5 seconds to hit a key or button on your controller to set the value. If you let the time expire, the setting will not be changed.
@@ -417,13 +417,13 @@
  35) buttonAssignAll: Set each input sequentially (hit ESC to skip to the next input)
      -> 依次设置每一项（按 ESC 跳到下一项）
  36) groupBoxInput: Select the input type you want to configure
-     -> 选择要配置的输入类型
+     -> 选择游戏使用的输入设备类型，即用键盘或手柄控制游戏
  37) labelJump: If you have no keys, give yourself a single key.
-     -> 如果一件道具都没有，就给自己一件吧。
+     -> If you have no keys, give yourself a single key.   ← 用户要求保持英文原文，未翻译
  38) labelTurbo: The game plays at an extremely fast speed.
      -> 游戏以极快的速度运行。
  39) labelLife: Restores all health. Holding "Shift" when pushing the button will refill your other resources.
-     -> 恢复全部体力。按住 Shift 再按该键会同时补满其他资源。
+     -> 恢复全部血量。按住 Shift 再按该键会同时补满其他资源。
  40) labelVolumeDown: Decreases the volume output of the game
      -> 降低游戏音量
  41) labelVolumeUp: Increases the volume output of the game
@@ -435,7 +435,7 @@
  44) checkBoxDim: If enabled, the game will dim when paused via the special pause key
      -> 启用后，用专用暂停键暂停时画面会变暗
  45) labelPause: Pause the game without opening the menu
-     -> 暂停游戏但不打开道具菜单
+     -> 暂停游戏但不打开地图/道具菜单
  46) labelReset: Reset the game
      -> 重置游戏
  47) labelReplayToggle: Toggle between Turbo and regular speed of the replays.

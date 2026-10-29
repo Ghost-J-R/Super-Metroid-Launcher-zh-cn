@@ -238,7 +238,7 @@
             this.autosaveCheck.Size = new System.Drawing.Size(75, 19);
             this.autosaveCheck.TabIndex = 0;
             this.autosaveCheck.Text = "自动保存";
-            this.toolTip1.SetToolTip(this.autosaveCheck, "退出时自动保存即时存档，启动时自动载入");
+            this.toolTip1.SetToolTip(this.autosaveCheck, "退出时自动保存为即时存档，启动时自动载入");
             this.autosaveCheck.UseVisualStyleBackColor = true;
             // 
             // toolTip1
@@ -277,7 +277,7 @@
             this.radioWindowed.TabIndex = 0;
             this.radioWindowed.TabStop = true;
             this.radioWindowed.Text = "窗口化";
-            this.toolTip1.SetToolTip(this.radioWindowed, "游戏以窗口形式运行，比例与缩放取上面选定的值");
+            this.toolTip1.SetToolTip(this.radioWindowed, "游戏以窗口模式运行，比例与缩放取设置选定的值");
             this.radioWindowed.UseVisualStyleBackColor = true;
             // 
             // height
@@ -349,7 +349,7 @@
             this.numericWindowScale.Name = "numericWindowScale";
             this.numericWindowScale.Size = new System.Drawing.Size(35, 23);
             this.numericWindowScale.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.numericWindowScale, "1 = 100%\r\n2 = 200%\r\n3 = 300%\r\n以此类推");
+            this.toolTip1.SetToolTip(this.numericWindowScale, "1 = 100%\r\n2 = 200%\r\n3 = 300%\r\netc.");
             this.numericWindowScale.Value = new decimal(new int[] {
             3,
             0,
@@ -479,7 +479,7 @@
             this.checkBoxShader.Size = new System.Drawing.Size(113, 19);
             this.checkBoxShader.TabIndex = 17;
             this.checkBoxShader.Text = "启用 GLSL 着色器";
-            this.toolTip1.SetToolTip(this.checkBoxShader, "启用 GLSL 着色器。\r\n\r\n仅 OpenGL 渲染方式支持。");
+            this.toolTip1.SetToolTip(this.checkBoxShader, "启用 GLSL 着色器。\r\n\r\n仅 OpenGL 渲染方式支持此选项。");
             this.checkBoxShader.UseVisualStyleBackColor = true;
             this.checkBoxShader.CheckedChanged += new System.EventHandler(this.CheckBoxShader_CheckedChanged);
             // 
@@ -771,7 +771,7 @@
             this.buttonKeymapping.Size = new System.Drawing.Size(381, 35);
             this.buttonKeymapping.TabIndex = 0;
             this.buttonKeymapping.Text = "按键绑定";
-            this.toolTip1.SetToolTip(this.buttonKeymapping, "打开专用于配置游戏按键映射的设置菜单");
+            this.toolTip1.SetToolTip(this.buttonKeymapping, "打开专门用于配置游戏按键映射的设置菜单");
             this.buttonKeymapping.UseVisualStyleBackColor = true;
             this.buttonKeymapping.Click += new System.EventHandler(this.ButtonKeymapping_Click);
             // 
