@@ -158,37 +158,37 @@ namespace Super_Metroid_Launcher
 
             if (result.Contains("Shift"))
             {
-                MessageBox.Show("The Shift keys are not recognized by sm.exe and thus cannot be used.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("sm.exe 无法识别 Shift 键，因此不能使用。", "输入无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
             if (result.Contains("Ctrl"))
             {
-                MessageBox.Show("The Control keys are not recognized by sm.exe and thus cannot be used.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("sm.exe 无法识别 Ctrl 键，因此不能使用。", "输入无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
             if (result.Contains("Alt"))
             {
-                MessageBox.Show("The Alt keys are not recognized by sm.exe and thus cannot be used.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("sm.exe 无法识别 Alt 键，因此不能使用。", "输入无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
             if (result.Contains('F') && result.Length == 2 | result.Length == 3)
             {
-                MessageBox.Show("The function keys are utilized by sm.exe's replay/savestate functionality and thus cannot be used for other inputs.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("功能键已被 sm.exe 的回放/即时存档功能占用，不能再用于其他输入。", "输入无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
             if (result.IsNumeric())
             {
-                MessageBox.Show("The number keys are utilized by sm.exe's replay/savestate functionality and thus cannot be used for other inputs.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("数字键已被 sm.exe 的回放/即时存档功能占用，不能再用于其他输入。", "输入无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
             if (result.Equals("-") | result.Equals("=") | result.Equals("Backspace"))
             {
-                MessageBox.Show("The " + result + " key is utilized by sm.exe's replay/savestate functionality and thus cannot be used for other inputs.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("「" + result + "」键已被 sm.exe 的回放/即时存档功能占用，不能再用于其他输入。", "输入无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
@@ -426,7 +426,7 @@ namespace Super_Metroid_Launcher
 
             if (changed)
             {
-                var answer = MessageBox.Show("Do you want to save your changes to " + previousName + " settings?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var answer = MessageBox.Show("是否保存你对「" + previousName + "」设置所做的更改？", "保存更改", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (answer == DialogResult.Yes)
                 {
@@ -528,7 +528,7 @@ namespace Super_Metroid_Launcher
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            var answer = MessageBox.Show("The changes that you have made will not be saved.\n\nDo you wish to continue?", "Confirmation", MessageBoxButtons.YesNo);
+            var answer = MessageBox.Show("你所做的改动将不会被保存。\n\n是否继续？", "确认", MessageBoxButtons.YesNo);
 
             if (answer == DialogResult.No) return;
 

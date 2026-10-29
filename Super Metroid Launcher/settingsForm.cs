@@ -25,7 +25,7 @@ namespace Super_Metroid_Launcher
             }
             catch
             {
-                var answer = MessageBox.Show("INI file is corrupted and preventing the settings menu from loading.\n\nDo you want to restore to default settings?", "Corrupted Settings", MessageBoxButtons.YesNo);
+                var answer = MessageBox.Show("INI 文件已损坏，导致设置菜单无法载入。\n\n是否恢复为默认设置？", "配置文件损坏", MessageBoxButtons.YesNo);
 
                 if (answer == DialogResult.No)
                 {
@@ -58,16 +58,16 @@ namespace Super_Metroid_Launcher
 
         private void ButtonReset_Click(object sender, EventArgs e)
         {
-            this.buttonReset.Text = "Resetting...";
+            this.buttonReset.Text = "正在重置...";
 
             this.Enabled = false;
 
-            var answer = MessageBox.Show("This will reset the INI file immediately and cannot be reversed.\n\nDo you wish to continue?", "Confirmation", MessageBoxButtons.YesNo);
+            var answer = MessageBox.Show("这会立即重置 INI 文件，且无法撤销。\n\n是否继续？", "确认", MessageBoxButtons.YesNo);
 
             if (answer == DialogResult.No)
             {
                 this.Enabled = true;
-                this.buttonReset.Text = "Reset";
+                this.buttonReset.Text = "重置设置";
                 return;
             }
 
@@ -78,7 +78,7 @@ namespace Super_Metroid_Launcher
             }
             catch
             {
-                answer = MessageBox.Show("INI backup file is corrupted and preventing the settings menu from loading.\n\nDo you want to download a clean copy from the sm repository?", "Corrupted Settings", MessageBoxButtons.YesNo);
+                answer = MessageBox.Show("INI 备份文件已损坏，导致设置菜单无法载入。\n\n是否从 sm 仓库下载一份干净的配置？", "配置文件损坏", MessageBoxButtons.YesNo);
 
                 if (answer == DialogResult.No)
                 {
@@ -94,7 +94,7 @@ namespace Super_Metroid_Launcher
 
             this.Enabled = true;
 
-            this.buttonReset.Text = "Reset";
+            this.buttonReset.Text = "重置设置";
         }
 
         private static void RestoreINI()
@@ -127,8 +127,8 @@ namespace Super_Metroid_Launcher
 
             if (!progressForm.IsConnectedToInternet())
             {
-                MessageBox.Show("Your INI backup file is missing and you are unable to connect to the internet to download a fresh copy.\n\nPlease ensure you have a stable internet connection before attempting to reset settings.",
-                    "No Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("INI 备份文件缺失，且当前无法联网下载新副本。\n\n请在尝试重置设置前确认网络连接稳定。",
+                    "无网络连接", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -160,7 +160,7 @@ namespace Super_Metroid_Launcher
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            buttonSave.Text = "Saving...";
+            buttonSave.Text = "正在保存...";
 
             groupBoxGameplay.Enabled = false;
             general.Enabled = false;
@@ -178,7 +178,7 @@ namespace Super_Metroid_Launcher
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            var answer = MessageBox.Show("The changes that you have made will not be saved.\n\nDo you wish to continue?", "Confirmation", MessageBoxButtons.YesNo);
+            var answer = MessageBox.Show("你所做的改动将不会被保存。\n\n是否继续？", "确认", MessageBoxButtons.YesNo);
 
             if (answer == DialogResult.No) return;
 
@@ -684,7 +684,7 @@ namespace Super_Metroid_Launcher
 
             if (!result.FileName.EndsWith(".zspr"))
             {
-                MessageBox.Show("Selected file must be of the .zspr format.", "Invalid File Type", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("所选文件必须是 .zspr 格式。", "文件类型无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -703,7 +703,7 @@ namespace Super_Metroid_Launcher
 
             if (!result.FileName.EndsWith(".glsl") && !result.FileName.EndsWith(".glslp"))
             {
-                MessageBox.Show("Selected file must be of the .glsl or .glslp formats.", "Invalid File Type", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("所选文件必须是 .glsl 或 .glslp 格式。", "文件类型无效", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -720,7 +720,7 @@ namespace Super_Metroid_Launcher
             {
                 if (Directory.GetFiles(result.SelectedPath, "*.opuz").Length.Equals(0))
                 {
-                    MessageBox.Show("No MSU files were found in the selected directory. Please verify the correct folder was selected and that the proper .pcm or .opuz files are available.", "No MSU Files Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("所选目录中没有找到 MSU 文件。请确认选对了文件夹，且其中含有正确的 .pcm 或 .opuz 文件。", "未找到 MSU 文件", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }

@@ -453,10 +453,10 @@
     <value>点击某个输入项后，你有 5 秒时间按下键盘按键或手柄按钮来完成设置。超时则该项保持不变。</value>
   </data>
   <data name="labelReplaysNote.Text" xml:space="preserve">
-    <value>      F1 - F10: Load savestates/replays
-Shift+F1 - F10: Saves savestate/replay
+    <value>      F1 - F10：载入即时存档 / 回放
+Shift+F1 - F10：保存即时存档 / 回放
 
-Ctrl: When held while loading a savestate, the game replays itself up to point of the savestate rather than immediately load the savestate.</value>
+Ctrl：载入即时存档时按住，游戏会先重演到该存档对应的时间点，而不是直接载入存档。</value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>114, 17</value>
