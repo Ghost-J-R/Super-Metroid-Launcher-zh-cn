@@ -267,7 +267,7 @@ namespace Super_Metroid_Launcher
             this.radioButtonController.Name = "radioButtonController";
             this.radioButtonController.Size = new System.Drawing.Size(78, 19);
             this.radioButtonController.TabIndex = 1;
-            this.radioButtonController.Text = "Controller";
+            this.radioButtonController.Text = "控制器";
             this.radioButtonController.UseVisualStyleBackColor = true;
             // 
             // radioButtonKeyboard

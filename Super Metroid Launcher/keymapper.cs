@@ -1,4 +1,4 @@
-﻿using IniParser;
+using IniParser;
 using IniParser.Model;
 using IniParser.Model.Configuration;
 using IniParser.Parser;
@@ -208,14 +208,14 @@ namespace Super_Metroid_Launcher
             var original = textBox.Text;
             string result;
 
-            var selection = groupBoxInput.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => n.Checked).Text;
+            // 按控件状态判断而非显示文本：显示文本可自由汉化
+            bool useController = radioButtonController.Checked;
 
             // Clear textbox
             textBox.Text = "";
             this.Refresh();
 
-            if (selection == "Controller") result = MyController.GetButtonName();
+            if (useController) result = MyController.GetButtonName();
             else result = GetKeyInput();
 
             if (result is null) textBox.Text = original;
@@ -270,10 +270,7 @@ namespace Super_Metroid_Launcher
 
         private void SaveINI()
         {
-            var selection = groupBoxInput.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => n.Checked).Text;
-
-            SaveControllerSettings(selection);
+            SaveControllerSettings(radioButtonController.Checked);
 
             SaveAdditionalSettings();
 
@@ -382,10 +379,8 @@ namespace Super_Metroid_Launcher
 
         private void DisplayController()
         {
-            var selection = groupBoxInput.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => n.Checked).Text;
-
-            if (selection == "Controller")
+            // 按控件状态判断而非显示文本
+            if (radioButtonController.Checked)
             {
                 var controllerControls = settings["GamepadMap"]["Controls"].Replace(" ", "").Split(",");
 
@@ -425,16 +420,17 @@ namespace Super_Metroid_Launcher
 
         private void InputType_CheckedChanged(object sender, EventArgs e)
         {
-            var selection = groupBoxInput.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => !n.Checked).Text;
+            // 事件触发时 radioButtonController.Checked 已是新状态，取反即「切换前」的类型
+            bool previousWasController = !radioButtonController.Checked;
+            var previousName = previousWasController ? radioButtonController.Text : radioButtonKeyboard.Text;
 
             if (changed)
             {
-                var answer = MessageBox.Show("Do you want to save your changes to " + selection + " settings?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var answer = MessageBox.Show("Do you want to save your changes to " + previousName + " settings?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (answer == DialogResult.Yes)
                 {
-                    SaveControllerSettings(selection);
+                    SaveControllerSettings(previousWasController);
                     FileINI();
                 }
             }
@@ -449,9 +445,9 @@ namespace Super_Metroid_Launcher
             filer.WriteFile(iniFile, settings, Encoding.GetEncoding(1252));
         }
 
-        private void SaveControllerSettings(string selection)
+        private void SaveControllerSettings(bool wasController)
         {
-            if (selection == "Controller")
+            if (wasController)
             {
                 settings["GamepadMap"]["Controls"] =
                     textBoxDpadUp.Text + ", " +

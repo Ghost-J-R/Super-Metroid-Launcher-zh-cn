@@ -253,7 +253,7 @@ namespace Super_Metroid_Launcher
             this.radioFullscreenMode.Name = "radioFullscreenMode";
             this.radioFullscreenMode.Size = new System.Drawing.Size(78, 19);
             this.radioFullscreenMode.TabIndex = 2;
-            this.radioFullscreenMode.Text = "Fullscreen";
+            this.radioFullscreenMode.Text = "独占全屏";
             this.toolTip1.SetToolTip(this.radioFullscreenMode, "Game will launch in exclusive fullscreen mode");
             this.radioFullscreenMode.UseVisualStyleBackColor = true;
             // 
@@ -264,7 +264,7 @@ namespace Super_Metroid_Launcher
             this.radioFullscreen.Name = "radioFullscreen";
             this.radioFullscreen.Size = new System.Drawing.Size(135, 19);
             this.radioFullscreen.TabIndex = 1;
-            this.radioFullscreen.Text = "Borderless Fullscreen";
+            this.radioFullscreen.Text = "无边框全屏";
             this.toolTip1.SetToolTip(this.radioFullscreen, "Game will launch in borderless fullscreen");
             this.radioFullscreen.UseVisualStyleBackColor = true;
             // 
@@ -309,7 +309,7 @@ namespace Super_Metroid_Launcher
             this.customSize.Name = "customSize";
             this.customSize.Size = new System.Drawing.Size(67, 19);
             this.customSize.TabIndex = 1;
-            this.customSize.Text = "Custom";
+            this.customSize.Text = "自定义";
             this.toolTip1.SetToolTip(this.customSize, "Set a custom aspect ratio");
             this.customSize.UseVisualStyleBackColor = true;
             // 
@@ -695,7 +695,7 @@ namespace Super_Metroid_Launcher
             this.radioButtonMono.Name = "radioButtonMono";
             this.radioButtonMono.Size = new System.Drawing.Size(57, 19);
             this.radioButtonMono.TabIndex = 0;
-            this.radioButtonMono.Text = "Mono";
+            this.radioButtonMono.Text = "单声道";
             this.toolTip1.SetToolTip(this.radioButtonMono, "Uniform audio output across all speakers");
             this.radioButtonMono.UseVisualStyleBackColor = true;
             // 

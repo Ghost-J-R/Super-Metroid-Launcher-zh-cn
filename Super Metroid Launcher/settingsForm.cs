@@ -1,4 +1,4 @@
-﻿using System.Data;
+using System.Data;
 using System.Diagnostics;
 using System.Net;
 using System.Text;
@@ -451,14 +451,10 @@ namespace Super_Metroid_Launcher
             settings["General"]["DisableFrameDelay"] = Convert.ToInt32(disableFrameDelay.Checked).ToString();
 
             // Reading aspect ratio setting
-            var selection = aspectRatio.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => n.Checked).Text;
-            settings["General"]["ExtendedAspectRatio"] = selection switch
-            {
-                "Steam Deck (16:10)" => "16:10",
-                "Widescreen (16:9)" => "16:9",
-                _ => "4:3",
-            };
+            // 按控件状态判断而非显示文本：显示文本可自由汉化，sm.ini 里的值不受影响
+            settings["General"]["ExtendedAspectRatio"] =
+                steamdeck.Checked ? "16:10" :
+                widescreen.Checked ? "16:9" : "4:3";
             if (unchangedSprites.Checked) settings["General"]["ExtendedAspectRatio"] += ", unchanged_sprites";
             if (noVisualFixes.Checked) settings["General"]["ExtendedAspectRatio"] += ", no_visual_fixes";
             if (checkBoxExtend.Checked) settings["General"]["ExtendedAspectRatio"] += ", extend_y";
@@ -468,23 +464,14 @@ namespace Super_Metroid_Launcher
             //
 
             // Reading custom window size or set to auto
-            selection = windowSize.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => n.Checked).Text;
-            settings["Graphics"]["WindowSize"] = selection switch
-            {
-                "Custom" => width.Text + "x" + height.Text,
-                _ => "Auto",
-            };
+            settings["Graphics"]["WindowSize"] = customSize.Checked
+                ? width.Text + "x" + height.Text
+                : "Auto";
 
             // Reading fullscreen settings
-            selection = fullscreenMode.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => n.Checked).Text;
-            settings["Graphics"]["Fullscreen"] = selection switch
-            {
-                "Borderless Fullscreen" => "1",
-                "Fullscreen" => "2",
-                _ => "0",
-            };
+            settings["Graphics"]["Fullscreen"] =
+                radioFullscreen.Checked ? "1" :
+                radioFullscreenMode.Checked ? "2" : "0";
             settings["Graphics"]["NewRenderer"] = Convert.ToInt32(checkPPU.Checked).ToString();
             settings["Graphics"]["NoSpriteLimits"] = Convert.ToInt32(checkSpriteLimit.Checked).ToString();
             settings["Graphics"]["LinearFiltering"] = Convert.ToInt32(checkLinearFiltering.Checked).ToString();
@@ -620,13 +607,7 @@ namespace Super_Metroid_Launcher
             */
 
             // Reading audio channels setting
-            selection = groupBoxAudioChannels.Controls.OfType<RadioButton>()
-                .FirstOrDefault(n => n.Checked).Text;
-            settings["Sound"]["AudioChannels"] = selection switch
-            {
-                "Mono" => "1",
-                _ => "2",
-            };
+            settings["Sound"]["AudioChannels"] = radioButtonMono.Checked ? "1" : "2";
 
             /* Reading MSU version setting
             if (checkBoxEnableMSU.Checked)
