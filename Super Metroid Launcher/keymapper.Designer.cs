@@ -387,7 +387,7 @@ namespace Super_Metroid_Launcher
             this.labelVolumeDown.Name = "labelVolumeDown";
             this.labelVolumeDown.Size = new System.Drawing.Size(84, 15);
             this.labelVolumeDown.TabIndex = 7;
-            this.labelVolumeDown.Text = "减小音量:";
+            this.labelVolumeDown.Text = "减小游戏音量:";
             this.labelVolumeDown.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.toolTip1.SetToolTip(this.labelVolumeDown, "Decreases the volume output of the game");
             // 
@@ -399,7 +399,7 @@ namespace Super_Metroid_Launcher
             this.labelVolumeUp.Name = "labelVolumeUp";
             this.labelVolumeUp.Size = new System.Drawing.Size(68, 15);
             this.labelVolumeUp.TabIndex = 7;
-            this.labelVolumeUp.Text = "增大音量:";
+            this.labelVolumeUp.Text = "增大游戏音量:";
             this.labelVolumeUp.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.toolTip1.SetToolTip(this.labelVolumeUp, "Increases the volume output of the game");
             // 
@@ -451,7 +451,7 @@ namespace Super_Metroid_Launcher
             this.labelPause.Name = "labelPause";
             this.labelPause.Size = new System.Drawing.Size(41, 15);
             this.labelPause.TabIndex = 5;
-            this.labelPause.Text = "暂停:";
+            this.labelPause.Text = "暂停游戏:";
             this.toolTip1.SetToolTip(this.labelPause, "Pause the game without opening the menu");
             // 
             // textBoxVolumeDown
@@ -497,7 +497,7 @@ namespace Super_Metroid_Launcher
             this.labelReset.Name = "labelReset";
             this.labelReset.Size = new System.Drawing.Size(38, 15);
             this.labelReset.TabIndex = 7;
-            this.labelReset.Text = "重置:";
+            this.labelReset.Text = "重置游戏:";
             this.toolTip1.SetToolTip(this.labelReset, "Reset the game");
             // 
             // textBoxReset
