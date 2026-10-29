@@ -328,7 +328,7 @@
             // labelJump
             // 
             this.labelJump.AutoSize = false;
-            this.labelJump.Location = new System.Drawing.Point(46, 54);
+            this.labelJump.Location = new System.Drawing.Point(35, 54);
             this.labelJump.Name = "labelJump";
             this.labelJump.Size = new System.Drawing.Size(85, 15);
             this.labelJump.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -339,7 +339,7 @@
             // labelTurbo
             // 
             this.labelTurbo.AutoSize = false;
-            this.labelTurbo.Location = new System.Drawing.Point(46, 83);
+            this.labelTurbo.Location = new System.Drawing.Point(35, 83);
             this.labelTurbo.Name = "labelTurbo";
             this.labelTurbo.Size = new System.Drawing.Size(85, 15);
             this.labelTurbo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,7 +350,7 @@
             // labelLife
             // 
             this.labelLife.AutoSize = false;
-            this.labelLife.Location = new System.Drawing.Point(46, 25);
+            this.labelLife.Location = new System.Drawing.Point(35, 25);
             this.labelLife.Name = "labelLife";
             this.labelLife.Size = new System.Drawing.Size(85, 15);
             this.labelLife.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -385,9 +385,9 @@
             // 
             this.labelVolumeDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVolumeDown.AutoSize = false;
-            this.labelVolumeDown.Location = new System.Drawing.Point(4, 193);
+            this.labelVolumeDown.Location = new System.Drawing.Point(35, 193);
             this.labelVolumeDown.Name = "labelVolumeDown";
-            this.labelVolumeDown.Size = new System.Drawing.Size(125, 15);
+            this.labelVolumeDown.Size = new System.Drawing.Size(83, 15);
             this.labelVolumeDown.TabIndex = 7;
             this.labelVolumeDown.Text = "减小游戏音量:";
             this.labelVolumeDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -397,9 +397,9 @@
             // 
             this.labelVolumeUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVolumeUp.AutoSize = false;
-            this.labelVolumeUp.Location = new System.Drawing.Point(4, 164);
+            this.labelVolumeUp.Location = new System.Drawing.Point(35, 164);
             this.labelVolumeUp.Name = "labelVolumeUp";
-            this.labelVolumeUp.Size = new System.Drawing.Size(125, 15);
+            this.labelVolumeUp.Size = new System.Drawing.Size(83, 15);
             this.labelVolumeUp.TabIndex = 7;
             this.labelVolumeUp.Text = "增大游戏音量:";
             this.labelVolumeUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -408,9 +408,9 @@
             // labelDecreaseWindowSize
             // 
             this.labelDecreaseWindowSize.AutoSize = false;
-            this.labelDecreaseWindowSize.Location = new System.Drawing.Point(4, 135);
+            this.labelDecreaseWindowSize.Location = new System.Drawing.Point(35, 135);
             this.labelDecreaseWindowSize.Name = "labelDecreaseWindowSize";
-            this.labelDecreaseWindowSize.Size = new System.Drawing.Size(125, 15);
+            this.labelDecreaseWindowSize.Size = new System.Drawing.Size(83, 15);
             this.labelDecreaseWindowSize.TabIndex = 7;
             this.labelDecreaseWindowSize.Text = "缩小游戏窗口:";
             this.labelDecreaseWindowSize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,9 +419,9 @@
             // labelIncreaseWindowSize
             // 
             this.labelIncreaseWindowSize.AutoSize = false;
-            this.labelIncreaseWindowSize.Location = new System.Drawing.Point(4, 106);
+            this.labelIncreaseWindowSize.Location = new System.Drawing.Point(35, 106);
             this.labelIncreaseWindowSize.Name = "labelIncreaseWindowSize";
-            this.labelIncreaseWindowSize.Size = new System.Drawing.Size(125, 15);
+            this.labelIncreaseWindowSize.Size = new System.Drawing.Size(83, 15);
             this.labelIncreaseWindowSize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelIncreaseWindowSize.TabIndex = 7;
             this.labelIncreaseWindowSize.Text = "放大游戏窗口:";
@@ -450,9 +450,9 @@
             // labelPause
             // 
             this.labelPause.AutoSize = false;
-            this.labelPause.Location = new System.Drawing.Point(4, 52);
+            this.labelPause.Location = new System.Drawing.Point(35, 52);
             this.labelPause.Name = "labelPause";
-            this.labelPause.Size = new System.Drawing.Size(125, 15);
+            this.labelPause.Size = new System.Drawing.Size(83, 15);
             this.labelPause.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelPause.TabIndex = 5;
             this.labelPause.Text = "暂停游戏:";
@@ -497,9 +497,9 @@
             // labelReset
             // 
             this.labelReset.AutoSize = false;
-            this.labelReset.Location = new System.Drawing.Point(4, 23);
+            this.labelReset.Location = new System.Drawing.Point(35, 23);
             this.labelReset.Name = "labelReset";
-            this.labelReset.Size = new System.Drawing.Size(125, 15);
+            this.labelReset.Size = new System.Drawing.Size(83, 15);
             this.labelReset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelReset.TabIndex = 7;
             this.labelReset.Text = "重置游戏:";
@@ -517,9 +517,9 @@
             // labelReplayToggle
             // 
             this.labelReplayToggle.AutoSize = false;
-            this.labelReplayToggle.Location = new System.Drawing.Point(15, 26);
+            this.labelReplayToggle.Location = new System.Drawing.Point(35, 26);
             this.labelReplayToggle.Name = "labelReplayToggle";
-            this.labelReplayToggle.Size = new System.Drawing.Size(116, 15);
+            this.labelReplayToggle.Size = new System.Drawing.Size(85, 15);
             this.labelReplayToggle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelReplayToggle.TabIndex = 5;
             this.labelReplayToggle.Text = "切换回放速度:";
@@ -528,9 +528,9 @@
             // labelStopReplay
             // 
             this.labelStopReplay.AutoSize = false;
-            this.labelStopReplay.Location = new System.Drawing.Point(15, 55);
+            this.labelStopReplay.Location = new System.Drawing.Point(35, 55);
             this.labelStopReplay.Name = "labelStopReplay";
-            this.labelStopReplay.Size = new System.Drawing.Size(116, 15);
+            this.labelStopReplay.Size = new System.Drawing.Size(85, 15);
             this.labelStopReplay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelStopReplay.TabIndex = 5;
             this.labelStopReplay.Text = "停止回放:";
