@@ -327,30 +327,33 @@
             // 
             // labelJump
             // 
-            this.labelJump.AutoSize = true;
+            this.labelJump.AutoSize = false;
             this.labelJump.Location = new System.Drawing.Point(92, 54);
             this.labelJump.Name = "labelJump";
             this.labelJump.Size = new System.Drawing.Size(39, 15);
+            this.labelJump.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelJump.TabIndex = 5;
             this.labelJump.Text = "跳跃:";
             this.toolTip1.SetToolTip(this.labelJump, "If you have no keys, give yourself a single key.");
             // 
             // labelTurbo
             // 
-            this.labelTurbo.AutoSize = true;
+            this.labelTurbo.AutoSize = false;
             this.labelTurbo.Location = new System.Drawing.Point(92, 83);
             this.labelTurbo.Name = "labelTurbo";
-            this.labelTurbo.Size = new System.Drawing.Size(41, 15);
+            this.labelTurbo.Size = new System.Drawing.Size(39, 15);
+            this.labelTurbo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelTurbo.TabIndex = 5;
             this.labelTurbo.Text = "加速游戏:";
             this.toolTip1.SetToolTip(this.labelTurbo, "游戏以极快的速度运行。");
             // 
             // labelLife
             // 
-            this.labelLife.AutoSize = true;
+            this.labelLife.AutoSize = false;
             this.labelLife.Location = new System.Drawing.Point(46, 25);
             this.labelLife.Name = "labelLife";
-            this.labelLife.Size = new System.Drawing.Size(87, 15);
+            this.labelLife.Size = new System.Drawing.Size(85, 15);
+            this.labelLife.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelLife.TabIndex = 5;
             this.labelLife.Text = "回满血:";
             this.toolTip1.SetToolTip(this.labelLife, "恢复全部血量。按住 Shift 再按该键会同时补满其他资源。");
@@ -381,44 +384,45 @@
             // labelVolumeDown
             // 
             this.labelVolumeDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelVolumeDown.AutoSize = true;
+            this.labelVolumeDown.AutoSize = false;
             this.labelVolumeDown.Location = new System.Drawing.Point(47, 193);
             this.labelVolumeDown.Name = "labelVolumeDown";
-            this.labelVolumeDown.Size = new System.Drawing.Size(84, 15);
+            this.labelVolumeDown.Size = new System.Drawing.Size(82, 15);
             this.labelVolumeDown.TabIndex = 7;
             this.labelVolumeDown.Text = "减小游戏音量:";
-            this.labelVolumeDown.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelVolumeDown.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.labelVolumeDown, "降低游戏音量");
             // 
             // labelVolumeUp
             // 
             this.labelVolumeUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelVolumeUp.AutoSize = true;
+            this.labelVolumeUp.AutoSize = false;
             this.labelVolumeUp.Location = new System.Drawing.Point(63, 164);
             this.labelVolumeUp.Name = "labelVolumeUp";
-            this.labelVolumeUp.Size = new System.Drawing.Size(68, 15);
+            this.labelVolumeUp.Size = new System.Drawing.Size(66, 15);
             this.labelVolumeUp.TabIndex = 7;
             this.labelVolumeUp.Text = "增大游戏音量:";
-            this.labelVolumeUp.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelVolumeUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.labelVolumeUp, "提高游戏音量");
             // 
             // labelDecreaseWindowSize
             // 
-            this.labelDecreaseWindowSize.AutoSize = true;
+            this.labelDecreaseWindowSize.AutoSize = false;
             this.labelDecreaseWindowSize.Location = new System.Drawing.Point(4, 135);
             this.labelDecreaseWindowSize.Name = "labelDecreaseWindowSize";
-            this.labelDecreaseWindowSize.Size = new System.Drawing.Size(127, 15);
+            this.labelDecreaseWindowSize.Size = new System.Drawing.Size(125, 15);
             this.labelDecreaseWindowSize.TabIndex = 7;
             this.labelDecreaseWindowSize.Text = "缩小游戏窗口:";
-            this.labelDecreaseWindowSize.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelDecreaseWindowSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.labelDecreaseWindowSize, "窗口缩放倍数减 1");
             // 
             // labelIncreaseWindowSize
             // 
-            this.labelIncreaseWindowSize.AutoSize = true;
+            this.labelIncreaseWindowSize.AutoSize = false;
             this.labelIncreaseWindowSize.Location = new System.Drawing.Point(8, 106);
             this.labelIncreaseWindowSize.Name = "labelIncreaseWindowSize";
-            this.labelIncreaseWindowSize.Size = new System.Drawing.Size(123, 15);
+            this.labelIncreaseWindowSize.Size = new System.Drawing.Size(121, 15);
+            this.labelIncreaseWindowSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelIncreaseWindowSize.TabIndex = 7;
             this.labelIncreaseWindowSize.Text = "放大游戏窗口:";
             this.toolTip1.SetToolTip(this.labelIncreaseWindowSize, "窗口缩放倍数加 1");
@@ -445,10 +449,11 @@
             // 
             // labelPause
             // 
-            this.labelPause.AutoSize = true;
+            this.labelPause.AutoSize = false;
             this.labelPause.Location = new System.Drawing.Point(90, 52);
             this.labelPause.Name = "labelPause";
-            this.labelPause.Size = new System.Drawing.Size(41, 15);
+            this.labelPause.Size = new System.Drawing.Size(39, 15);
+            this.labelPause.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelPause.TabIndex = 5;
             this.labelPause.Text = "暂停游戏:";
             this.toolTip1.SetToolTip(this.labelPause, "暂停游戏但不打开地图/道具菜单");
@@ -491,10 +496,11 @@
             // 
             // labelReset
             // 
-            this.labelReset.AutoSize = true;
+            this.labelReset.AutoSize = false;
             this.labelReset.Location = new System.Drawing.Point(93, 23);
             this.labelReset.Name = "labelReset";
-            this.labelReset.Size = new System.Drawing.Size(38, 15);
+            this.labelReset.Size = new System.Drawing.Size(36, 15);
+            this.labelReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelReset.TabIndex = 7;
             this.labelReset.Text = "重置游戏:";
             this.toolTip1.SetToolTip(this.labelReset, "重置游戏");
@@ -510,20 +516,22 @@
             // 
             // labelReplayToggle
             // 
-            this.labelReplayToggle.AutoSize = true;
+            this.labelReplayToggle.AutoSize = false;
             this.labelReplayToggle.Location = new System.Drawing.Point(15, 26);
             this.labelReplayToggle.Name = "labelReplayToggle";
-            this.labelReplayToggle.Size = new System.Drawing.Size(118, 15);
+            this.labelReplayToggle.Size = new System.Drawing.Size(116, 15);
+            this.labelReplayToggle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelReplayToggle.TabIndex = 5;
             this.labelReplayToggle.Text = "切换回放速度:";
             this.toolTip1.SetToolTip(this.labelReplayToggle, "在回放的高速与正常速度之间切换。");
             // 
             // labelStopReplay
             // 
-            this.labelStopReplay.AutoSize = true;
+            this.labelStopReplay.AutoSize = false;
             this.labelStopReplay.Location = new System.Drawing.Point(61, 55);
             this.labelStopReplay.Name = "labelStopReplay";
-            this.labelStopReplay.Size = new System.Drawing.Size(72, 15);
+            this.labelStopReplay.Size = new System.Drawing.Size(70, 15);
+            this.labelStopReplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelStopReplay.TabIndex = 5;
             this.labelStopReplay.Text = "停止回放:";
             this.toolTip1.SetToolTip(this.labelStopReplay, "停止当前正在进行的回放。");
