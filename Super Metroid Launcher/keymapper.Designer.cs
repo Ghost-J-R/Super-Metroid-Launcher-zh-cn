@@ -1,4 +1,4 @@
-﻿namespace Super_Metroid_Launcher
+namespace Super_Metroid_Launcher
 {
     partial class keymapper
     {
@@ -243,7 +243,7 @@
             this.buttonAssignAll.Size = new System.Drawing.Size(134, 25);
             this.buttonAssignAll.TabIndex = 9;
             this.buttonAssignAll.Text = "依次分配全部按键";
-            this.toolTip1.SetToolTip(this.buttonAssignAll, "Set each input sequentially (hit ESC to skip to the next input)");
+            this.toolTip1.SetToolTip(this.buttonAssignAll, "依次设置每一项（按 ESC 跳到下一项）");
             this.buttonAssignAll.UseVisualStyleBackColor = true;
             this.buttonAssignAll.Click += new System.EventHandler(this.ButtonAssignAll_Click);
             // 
@@ -257,7 +257,7 @@
             this.groupBoxInput.TabIndex = 12;
             this.groupBoxInput.TabStop = false;
             this.groupBoxInput.Text = "输入类型";
-            this.toolTip1.SetToolTip(this.groupBoxInput, "Select the input type you want to configure");
+            this.toolTip1.SetToolTip(this.groupBoxInput, "选择要配置的输入类型");
             // 
             // radioButtonController
             // 
@@ -333,7 +333,7 @@
             this.labelJump.Size = new System.Drawing.Size(39, 15);
             this.labelJump.TabIndex = 5;
             this.labelJump.Text = "跳跃:";
-            this.toolTip1.SetToolTip(this.labelJump, "If you have no keys, give yourself a single key.");
+            this.toolTip1.SetToolTip(this.labelJump, "如果一件道具都没有，就给自己一件吧。");
             // 
             // labelTurbo
             // 
@@ -343,7 +343,7 @@
             this.labelTurbo.Size = new System.Drawing.Size(41, 15);
             this.labelTurbo.TabIndex = 5;
             this.labelTurbo.Text = "加速游戏:";
-            this.toolTip1.SetToolTip(this.labelTurbo, "The game plays at an extremely fast speed.");
+            this.toolTip1.SetToolTip(this.labelTurbo, "游戏以极快的速度运行。");
             // 
             // labelLife
             // 
@@ -353,8 +353,7 @@
             this.labelLife.Size = new System.Drawing.Size(87, 15);
             this.labelLife.TabIndex = 5;
             this.labelLife.Text = "回满血:";
-            this.toolTip1.SetToolTip(this.labelLife, "Restores all health. Holding \"Shift\" when pushing the button will refill your oth" +
-        "er resources.");
+            this.toolTip1.SetToolTip(this.labelLife, "恢复全部体力。按住 Shift 再按该键会同时补满其他资源。");
             // 
             // groupBoxGame
             // 
@@ -389,7 +388,7 @@
             this.labelVolumeDown.TabIndex = 7;
             this.labelVolumeDown.Text = "减小游戏音量:";
             this.labelVolumeDown.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip1.SetToolTip(this.labelVolumeDown, "Decreases the volume output of the game");
+            this.toolTip1.SetToolTip(this.labelVolumeDown, "降低游戏音量");
             // 
             // labelVolumeUp
             // 
@@ -401,7 +400,7 @@
             this.labelVolumeUp.TabIndex = 7;
             this.labelVolumeUp.Text = "增大游戏音量:";
             this.labelVolumeUp.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip1.SetToolTip(this.labelVolumeUp, "Increases the volume output of the game");
+            this.toolTip1.SetToolTip(this.labelVolumeUp, "提高游戏音量");
             // 
             // labelDecreaseWindowSize
             // 
@@ -412,7 +411,7 @@
             this.labelDecreaseWindowSize.TabIndex = 7;
             this.labelDecreaseWindowSize.Text = "缩小游戏窗口:";
             this.labelDecreaseWindowSize.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip1.SetToolTip(this.labelDecreaseWindowSize, "Decrease window scale by a factor of 1");
+            this.toolTip1.SetToolTip(this.labelDecreaseWindowSize, "窗口缩放倍数减 1");
             // 
             // labelIncreaseWindowSize
             // 
@@ -422,7 +421,7 @@
             this.labelIncreaseWindowSize.Size = new System.Drawing.Size(123, 15);
             this.labelIncreaseWindowSize.TabIndex = 7;
             this.labelIncreaseWindowSize.Text = "放大游戏窗口:";
-            this.toolTip1.SetToolTip(this.labelIncreaseWindowSize, "Increase window scale by a factor of 1");
+            this.toolTip1.SetToolTip(this.labelIncreaseWindowSize, "窗口缩放倍数加 1");
             // 
             // checkBoxDim
             // 
@@ -432,7 +431,7 @@
             this.checkBoxDim.Size = new System.Drawing.Size(123, 19);
             this.checkBoxDim.TabIndex = 6;
             this.checkBoxDim.Text = "暂停时画面变暗";
-            this.toolTip1.SetToolTip(this.checkBoxDim, "If enabled, the game will dim when paused via the special pause key");
+            this.toolTip1.SetToolTip(this.checkBoxDim, "启用后，用专用暂停键暂停时画面会变暗");
             this.checkBoxDim.UseVisualStyleBackColor = true;
             // 
             // textBoxPause
@@ -452,7 +451,7 @@
             this.labelPause.Size = new System.Drawing.Size(41, 15);
             this.labelPause.TabIndex = 5;
             this.labelPause.Text = "暂停游戏:";
-            this.toolTip1.SetToolTip(this.labelPause, "Pause the game without opening the menu");
+            this.toolTip1.SetToolTip(this.labelPause, "暂停游戏但不打开道具菜单");
             // 
             // textBoxVolumeDown
             // 
@@ -498,7 +497,7 @@
             this.labelReset.Size = new System.Drawing.Size(38, 15);
             this.labelReset.TabIndex = 7;
             this.labelReset.Text = "重置游戏:";
-            this.toolTip1.SetToolTip(this.labelReset, "Reset the game");
+            this.toolTip1.SetToolTip(this.labelReset, "重置游戏");
             // 
             // textBoxReset
             // 
@@ -517,7 +516,7 @@
             this.labelReplayToggle.Size = new System.Drawing.Size(118, 15);
             this.labelReplayToggle.TabIndex = 5;
             this.labelReplayToggle.Text = "切换回放速度:";
-            this.toolTip1.SetToolTip(this.labelReplayToggle, "Toggle between Turbo and regular speed of the replays.");
+            this.toolTip1.SetToolTip(this.labelReplayToggle, "在回放的高速与正常速度之间切换。");
             // 
             // labelStopReplay
             // 
@@ -527,7 +526,7 @@
             this.labelStopReplay.Size = new System.Drawing.Size(72, 15);
             this.labelStopReplay.TabIndex = 5;
             this.labelStopReplay.Text = "停止回放:";
-            this.toolTip1.SetToolTip(this.labelStopReplay, "Stop the current replay in progress.");
+            this.toolTip1.SetToolTip(this.labelStopReplay, "停止当前正在进行的回放。");
             // 
             // buttonSave
             // 
@@ -536,7 +535,7 @@
             this.buttonSave.Size = new System.Drawing.Size(175, 32);
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "保存";
-            this.toolTip1.SetToolTip(this.buttonSave, "Save all controller settings and close menu");
+            this.toolTip1.SetToolTip(this.buttonSave, "保存全部按键设置并关闭菜单");
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
@@ -547,7 +546,7 @@
             this.buttonReset.Size = new System.Drawing.Size(175, 32);
             this.buttonReset.TabIndex = 2;
             this.buttonReset.Text = "重置";
-            this.toolTip1.SetToolTip(this.buttonReset, "Reset all controller related settings");
+            this.toolTip1.SetToolTip(this.buttonReset, "重置全部按键相关设置");
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
@@ -558,7 +557,7 @@
             this.buttonCancel.Size = new System.Drawing.Size(175, 32);
             this.buttonCancel.TabIndex = 0;
             this.buttonCancel.Text = "取消";
-            this.toolTip1.SetToolTip(this.buttonCancel, "Close keymapping utility without saving any changes");
+            this.toolTip1.SetToolTip(this.buttonCancel, "不保存任何改动，直接关闭按键绑定工具");
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 

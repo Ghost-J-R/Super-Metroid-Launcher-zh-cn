@@ -1,4 +1,4 @@
-﻿<root>
+<root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -447,10 +447,10 @@
     <value>17, 17</value>
   </metadata>
   <data name="pictureController.ToolTip" xml:space="preserve">
-    <value>When you click on one of the fields for a given input selection, you will have 5 seconds to hit a key or button on your controller to set the value. If you let the time expire, the setting will not be changed.</value>
+    <value>点击某个输入项后，你有 5 秒时间按下键盘按键或手柄按钮来完成设置。超时则该项保持不变。</value>
   </data>
   <data name="groupBoxController.ToolTip" xml:space="preserve">
-    <value>When you click on one of the fields for a given input selection, you will have 5 seconds to hit a key or button on your controller to set the value. If you let the time expire, the setting will not be changed.</value>
+    <value>点击某个输入项后，你有 5 秒时间按下键盘按键或手柄按钮来完成设置。超时则该项保持不变。</value>
   </data>
   <data name="labelReplaysNote.Text" xml:space="preserve">
     <value>      F1 - F10: Load savestates/replays

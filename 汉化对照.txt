@@ -2,7 +2,7 @@
  Super Metroid Launcher  —  已汉化内容 中英对照
  工程：Super-Metroid-Launcher-SourceCode - CN（上游 v1.0.1）
  更新时间：2026-10-29 18:25
- 条目数：78 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
+ 条目数：129 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
          故编号共 75 条）
 ================================================================================
 
@@ -294,7 +294,7 @@
   设置窗口               29 条
   按键绑定窗口           25 条
   ------------------------------------
-  合计                   78 条
+  合计                   129 条
 
   耦合字面量：已全部解耦（当前界面 0 个可见项仍依赖显示文本）
                             · settingsForm.cs 4 处「switch(选中项.Text)」改为读控件状态：
@@ -338,3 +338,118 @@
 
  解耦方式见 §四。写入 sm.ini 的值（Auto / WxH / 0 / 1 / 2 / 16:10 / 16:9 / 4:3）完全未变，
  行为与改动前等价，只是不再依赖控件的显示文本。
+
+
+================================================================================
+ 六、悬停提示（可见 51 条：settingsForm 32 + keymapper 19）
+================================================================================
+
+ [设置窗口 settingsForm.Designer.cs]
+  1) disableFrameDelay: Disable Frame Delay
+     -> 禁用每帧的 SDL_Delay（若显示器正好是 60Hz，性能会略有提升）
+  2) autosaveCheck: Autosave
+     -> 退出时自动保存即时存档，启动时自动载入
+  3) radioFullscreenMode: Fullscreen
+     -> 游戏将以独占全屏模式启动
+  4) radioFullscreen: Borderless Fullscreen
+     -> 游戏将以无边框全屏启动
+  5) radioWindowed: Windowed
+     -> 游戏以窗口形式运行，比例与缩放取上面选定的值
+  6) height: Height
+     -> 高度
+  7) width: Width
+     -> 宽度
+  8) customSize: Custom
+     -> 自定义窗口像素尺寸（宽 x 高）
+  9) windowAuto: Auto
+     -> 自动调整窗口尺寸以匹配所选比例
+ 10) checkPPU: Optimized SNES PPU
+     -> 使用优化过的 SNES PPU 实现（可能有 bug）
+ 11) numericWindowScale: 1 = 100%\r\n2 = 200%\r\n3 = 300%\r\netc.
+     -> 1 = 100%\r\n2 = 200%\r\n3 = 300%\r\n以此类推
+ 12) labelScale: Window Scale:
+     -> 非全屏时的游戏窗口缩放倍数
+ 13) checkMode7: Enhanced Mode7
+     -> 以更高分辨率显示世界地图
+ 14) checkStretch: Stretch
+     -> 忽略屏幕比例，把画面拉伸铺满整个窗口/屏幕。
+ 15) checkSpriteLimit: No Sprite Limit
+     -> 取消每扫描线的精灵数量上限
+ 16) checkLinearFiltering: Linear Filtering
+     -> 使用线性过滤。画面变柔和，像素不再锐利。
+ 17) buttonOpenShader: ...
+     -> 打开对话框选择 GLSL 着色器文件。
+ 18) textBoxGLSLShader: The path where your .glsl or .slslp file is located
+     -> .glsl 或 .glslp 文件所在路径
+ 19) checkBoxShader: Use GLSL Shader
+     -> 启用 GLSL 着色器。\r\n\r\n仅 OpenGL 渲染方式支持。
+ 20) checkBoxEnableAudio: Enable Audio
+     -> 启用游戏的音频输出
+ 21) labelAudioFrequency: Audio Frequency:
+     -> DSP 采样率（每秒采样数）
+ 22) labelAudioSamples: Audio Samples:
+     -> 音频缓冲区大小（采样数）
+ 23) comboBoxSamples: Audio buffer size in samples
+     -> 音频缓冲区大小（采样数）
+ 24) comboBoxFrequency: DSP frequency in samples per second
+     -> DSP 采样率（每秒采样数）
+ 25) radioButtonStereo: Stereo
+     -> 按声音在画面中的位置输出到左/右声道
+ 26) radioButtonMono: Mono
+     -> 所有声道输出相同的音频
+ 27) buttonReset: Reset all settings to their default values
+     -> 把所有设置恢复为默认值
+ 28) buttonSave: Save current settings and close window
+     -> 保存当前设置并关闭窗口
+ 29) buttonCancel: Close window without saving any settings
+     -> 不保存任何设置直接关闭窗口
+ 30) labelRenderMethod: Render Method:
+     -> 所使用的渲染后端。在树莓派上 SDL-Software 渲染可能性能更好
+ 31) comboRenderMethod: Rendering software used. SDL-software rendering may give better performance on Raspberry Pi
+     -> 所使用的渲染后端。在树莓派上 SDL-Software 渲染可能性能更好
+ 32) buttonKeymapping: Keymapping
+     -> 打开专用于配置游戏按键映射的设置菜单
+
+ [按键绑定窗口 keymapper.Designer.cs / keymapper.resx]
+ 33) pictureController: When you click on one of the fields for a given input selection, you will have 5 seconds to hit a key or button on your controller to set the value. If you let the time expire, the setting will not be changed.
+     -> 点击某个输入项后，你有 5 秒时间按下键盘按键或手柄按钮来完成设置。超时则该项保持不变。
+ 34) groupBoxController: When you click on one of the fields for a given input selection, you will have 5 seconds to hit a key or button on your controller to set the value. If you let the time expire, the setting will not be changed.
+     -> 点击某个输入项后，你有 5 秒时间按下键盘按键或手柄按钮来完成设置。超时则该项保持不变。
+ 35) buttonAssignAll: Assign All Input
+     -> 依次设置每一项（按 ESC 跳到下一项）
+ 36) groupBoxInput: Input Type
+     -> 选择要配置的输入类型
+ 37) labelJump: Jump:
+     -> 如果一件道具都没有，就给自己一件吧。
+ 38) labelTurbo: Turbo:
+     -> 游戏以极快的速度运行。
+ 39) labelLife: Restore Health:
+     -> 恢复全部体力。按住 Shift 再按该键会同时补满其他资源。
+ 40) labelVolumeDown: Volume Down:
+     -> 降低游戏音量
+ 41) labelVolumeUp: Volume Up:
+     -> 提高游戏音量
+ 42) labelDecreaseWindowSize: Decrease Window Size:
+     -> 窗口缩放倍数减 1
+ 43) labelIncreaseWindowSize: Increase Window Size:
+     -> 窗口缩放倍数加 1
+ 44) checkBoxDim: Dim When Paused
+     -> 启用后，用专用暂停键暂停时画面会变暗
+ 45) labelPause: Pause:
+     -> 暂停游戏但不打开道具菜单
+ 46) labelReset: Reset:
+     -> 重置游戏
+ 47) labelReplayToggle: Toggle Replay Speed:
+     -> 在回放的高速与正常速度之间切换。
+ 48) labelStopReplay: Stop Replay:
+     -> 停止当前正在进行的回放。
+ 49) buttonSave: Save
+     -> 保存全部按键设置并关闭菜单
+ 50) buttonReset: Reset
+     -> 重置全部按键相关设置
+ 51) buttonCancel: Cancel
+     -> 不保存任何改动，直接关闭按键绑定工具
+
+ 说明：keymapper 的 pictureController / groupBoxController 两条来自 keymapper.resx
+       （resources.GetString），其余来自 Designer 的 SetToolTip。多行原文已合并为单行中文。
+       未使用控件的 20 条 tooltip 不翻译（目标控件 Visible = false）。
