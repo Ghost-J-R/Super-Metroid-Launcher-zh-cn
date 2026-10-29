@@ -1,7 +1,7 @@
 ﻿================================================================================
  Super Metroid Launcher  —  已汉化内容 中英对照
  工程：Super-Metroid-Launcher-SourceCode - CN（上游 v1.0.1）
- 更新时间：2026-10-29 18:20（含用户两轮润色稿）
+ 更新时间：2026-10-29 18:25
  条目数：73 条已汉化（另有 2 项渲染方式下拉项按编号列出、标注「不改」，
          故编号共 75 条）
 ================================================================================
@@ -11,13 +11,14 @@
   以下**不在**本清单内（按设计保持英文）：
     A. 耦合字面量 —— 文案被代码当判断条件用，改了会让设置写错或功能失效：
          settingsForm: Custom / Fullscreen / Borderless Fullscreen / Mono
-                        （另有 Steam Deck (16:10) / Widescreen (16:9) / Normal (4:3)，属隐藏控件）
+                        （另有 Steam Deck (16:10) / Widescreen (16:9)，属隐藏控件）
          keymapper   : Controller（输入类型单选；分组标题「控制器/手柄 按键映射」已译）
     B. 未使用控件（Visible = false，界面上不出现）：共 22 条文案。
     C. 渲染方式下拉的 SDL (Default) / SDL-Software：按用户要求保留英文原名，
        便于与 sm.ini 里的 OutputMethod 取值（SDL / SDL-Software / OpenGL）直接对上号。
        该下拉的判据是 SelectedIndex（settingsForm.cs:496），所以文本中英文都不影响功能。
-  尚未翻译：全部悬停提示（约 130 条）、对话框消息、progressForm 正文、两个 .resx。
+  尚未翻译：悬停提示（共 72 条，其中界面可见 51 条）、对话框消息、
+            progressForm 正文、两个 .resx。
   「\n」表示源码里的换行转义，不是字面反斜杠。
 
 
@@ -108,11 +109,11 @@
     ※ 这一项的准确含义（已核对 sm 源码，它不是画面比例）：
       · smre-cn\src\config.c:334-348 —— WindowSize = Auto 时 g_config.window_width /
         window_height 置 0（自动）；WindowSize = 1280x960 时拆成 window_width /
-        window_height 两个字段。它设的是**窗口像素尺寸**。
+        window_height 两个字段。它设的是窗口像素尺寸。
       · smre-cn\游玩说明.md:132 —— 原文定义：「窗口尺寸：Auto 或 宽x高（如 1280x960）」。
       · 真正的画面比例是另外两个键：IgnoreAspectRatio（config.c:353，拉伸铺满）与
         extended_aspect_ratio（config.h:60；main.c:347 中 g_snes_width =
-        extended_aspect_ratio * 2 + 256）。启动器里控制比例的是那个**已被隐藏**的
+        extended_aspect_ratio * 2 + 256）。启动器里控制比例的是那个已被隐藏的
         「Aspect Ratio」分组。
       若想更直白，可改为「窗口尺寸」，语义不变。
 
@@ -295,13 +296,24 @@
   ------------------------------------
   合计                   73 条
 
-  保持英文（耦合字面量）：  Custom / Fullscreen / Borderless Fullscreen / Mono /
-                            Controller / Steam Deck (16:10) / Widescreen (16:9) / Normal (4:3)
+  保持英文（耦合字面量）：  共 7 个，其中【当前界面可见】5 个：
+                              settingsForm 4 个 —— Custom / Borderless Fullscreen /
+                                                  Fullscreen / Mono
+                              keymapper    1 个 —— Controller
+                            【界面看不到】2 个（位于未使用的 Aspect Ratio 分组内）：
+                              settingsForm —— Steam Deck (16:10) / Widescreen (16:9)
+                            注：Normal (4:3) 不是耦合项，只是随该分组一起隐藏。
+
   保持英文（按用户要求）：  SDL (Default) / SDL-Software / OpenGL
-  保持英文（未使用控件）：  22 条
-  尚未翻译：                悬停提示约 130 条、对话框消息、progressForm 正文、2 个 .resx
+
+  保持英文（未使用控件）：  22 条文案
+
+  尚未翻译：                悬停提示 72 条（settingsForm 53 + keymapper 19，
+                            其中界面可见 51 条、随未使用控件隐藏 21 条）、
+                            对话框消息、progressForm 正文、2 个 .resx
 
 ================================================================================
  生成方式：逐条改自 v1.0.1 源码；编译已验证（0 error、0 C# 编译错误），
            并扫描编译产物 DLL 的 UTF-16 字符串确认中文已编入程序集。
+ 数量口径：悬停提示经脚本统计（SetToolTip 出现次数 + 沿 Controls 父链判定可见性）。
 ================================================================================
