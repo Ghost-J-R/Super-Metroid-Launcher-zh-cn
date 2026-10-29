@@ -503,7 +503,7 @@
             this.labelAudioFrequency.Location = new System.Drawing.Point(35, 84);
             this.labelAudioFrequency.Name = "labelAudioFrequency";
             this.labelAudioFrequency.Size = new System.Drawing.Size(98, 15);
-            this.labelAudioFrequency.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelAudioFrequency.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelAudioFrequency.TabIndex = 1;
             this.labelAudioFrequency.Text = "音频采样率:";
             this.toolTip1.SetToolTip(this.labelAudioFrequency, "DSP 采样率（每秒采样数）");
@@ -511,10 +511,10 @@
             // labelAudioSamples
             // 
             this.labelAudioSamples.AutoSize = false;
-            this.labelAudioSamples.Location = new System.Drawing.Point(46, 112);
+            this.labelAudioSamples.Location = new System.Drawing.Point(35, 112);
             this.labelAudioSamples.Name = "labelAudioSamples";
-            this.labelAudioSamples.Size = new System.Drawing.Size(87, 15);
-            this.labelAudioSamples.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelAudioSamples.Size = new System.Drawing.Size(98, 15);
+            this.labelAudioSamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelAudioSamples.TabIndex = 2;
             this.labelAudioSamples.Text = "采样缓冲区大小:";
             this.toolTip1.SetToolTip(this.labelAudioSamples, "音频缓冲区大小（采样数）");
