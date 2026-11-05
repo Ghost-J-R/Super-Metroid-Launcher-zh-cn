@@ -115,7 +115,8 @@ namespace Super_Metroid_Launcher
             {
                 Task.Run(() =>
                 {
-                    Repository.Clone("https://github.com/snesrev/sm.git", repoDir,
+                    // 改为中文版仓库：汉化工程 sm-zh-cn（snesrev/sm 的汉化 fork）
+                    Repository.Clone("https://github.com/Ghost-J-R/sm-zh-cn.git", repoDir,
                         new CloneOptions
                         {
                             OnCheckoutProgress = (clonePath, completed, total) => CheckoutProgress(clonePath, completed, total)
@@ -491,7 +492,8 @@ namespace Super_Metroid_Launcher
                     hashString.AppendFormat("{0:x2}", b);
                 }
 
-                if (hashString.ToString().ToUpper() == "12B77C4BC9C1832CEE8881244659065EE1D84C70C3D29E6EAF92E6798CC2CA72") return true;
+                // 简体中文汉化版 ROM v1.00（4 MB）的 SHA-256；原版 ROM 为 12B77C4B...CA72
+                if (hashString.ToString().ToUpper() == "7B29DAB77D9856C5218B46299E6AC60C896B381107B995EEC06AC7C2AAD3CEFD") return true;
             }
             return false;
         }
